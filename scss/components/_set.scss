@@ -1,0 +1,64 @@
+/* SET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background: $bg-body;
+	font-family: "Montserrat", sans-serif !important;
+}
+h1 {
+	margin-bottom: 0 !important;
+}
+h2 {
+	font-weight: 600 !important;
+}
+h3 {
+	font-weight: 600 !important;
+}
+h4 {
+	font-weight: 600 !important;
+}
+hr {
+	
+	opacity: 100% !important;
+}
+p {
+	margin-bottom: 0 !important;
+}
+.titles {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+
+/* Botón de whastapp */
+.float {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 40px;
+	right: 40px;
+	background-color: #25d366;
+	color: #FFF;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 30px;
+	box-shadow: 2px 2px 3px #999;
+	z-index: 100;
+	&:hover {
+		text-decoration: none;
+		color: #25d366;
+		background-color: #fff;
+	}
+}
+
+.my-float{
+	margin-top:16px;
+}
+

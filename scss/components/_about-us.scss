@@ -1,0 +1,146 @@
+
+/* NOSOTROS */
+@keyframes rotar {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(-2deg);
+	}
+	20% {
+		transform: rotate(-4deg);
+	}
+	30% {
+		transform: rotate(-2deg);
+	}
+	40% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(2deg);
+	}
+	60% {
+		transform: rotate(4deg);
+	}
+	70% {
+		transform: rotate(2deg);
+	}
+	80% {
+		transform: rotate(0deg);
+	}
+	90% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+#Nosotros {
+	background: $gen-orange;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	.us-title {
+		@include font-size(1.8rem);
+		text-transform: uppercase;
+		padding-bottom: 5px;
+	}
+	hr {
+		width: 33%;
+		height: 2px;
+		background: $bg-body;
+		border: none;
+		margin-top: 5px;
+		margin: auto;
+		margin-bottom: 35px;
+	}
+	.about-us {
+		.who-we-r {
+			.h31 {
+				@include font-size(1.5rem);
+				margin: auto;
+				padding-bottom: 25px;
+			}
+			.p-who-we-r {
+				@include font-size(1.15rem);
+				padding-bottom: 20px;
+				margin: 0 4rem;
+			}
+		}
+		.raven-team {
+			.h32 {
+				@include font-size(1.8rem);
+				margin: auto;
+				padding-bottom: 25px;
+				text-transform: uppercase;
+			}
+			hr {
+				width: 33%;
+				height: 2px;
+				background: $bg-body;
+				border: none;
+				margin-top: 5px;
+				margin: auto;
+			}
+			.team-box {
+				margin: 0 4rem;
+				.team-member {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 33.333333%;
+					margin: 30px;
+					margin-bottom: 20px;
+					.camilo-img {
+						img {
+							@include team-member (50%, 4px solid $bg-body, 309px, 322px, 20px, rotar 2s infinite);
+						}
+					}
+					.alejandro-img {
+						img {
+							@include team-member (50%, 4px solid $bg-body, 309px, 322px, 20px, rotar 2s infinite);
+						}
+					}
+					.juan-img {
+						img {
+							@include team-member (50%, 4px solid $bg-body, 309px, 322px, 20px, rotar 2s infinite);
+						}
+					}
+					.name-team {
+						@include font-size(1.3rem);
+						padding-bottom: 10px;
+						text-align: center;
+						width: 75%;
+					}
+					.p-team {
+						@include font-size(1.1rem);
+						text-align: center;
+						width: 90%;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1237px) {
+	#Nosotros {
+		.about-us {
+			.raven-team {
+				.team-box {
+					margin:0 auto;
+					flex-direction: column;
+					align-items: center;
+					.team-member {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						width: 90%;
+
+					}
+				}
+			}
+		}
+	}
+}

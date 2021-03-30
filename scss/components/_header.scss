@@ -1,0 +1,130 @@
+/* HEADER */
+.menu {
+	width: 100%;
+	height: 75px;
+	background: $bg-body;
+	border-bottom: 2px solid $gen-orange;
+	.logo-box {
+		margin-left: 20px;
+		margin-bottom: 0 !important;
+		#raven {
+			margin-top: 10px;
+			a {
+				
+				font-family: "Bebas Neue", cursive;
+				text-decoration: none;
+				@include font-size(4.2rem);
+				color: $gen-orange;
+				font-weight: 400;
+			}
+		}
+		#art {
+			margin-top: 10px;
+			a {
+				font-family: "Bebas Neue", cursive;
+				text-decoration: none;
+				@include font-size(2.2rem);
+				font-weight: 50;
+				color: $gen-orange;
+			}
+		}
+	}
+	.list-container {
+		margin-right: 20px;
+		ul {
+			margin-bottom: 0 !important;
+			li {
+				list-style: none;
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+					margin: 0px 10px;
+					padding: 5px;
+					border-radius: 10px;
+					transition: 0.3s;
+					font-size: 17px;
+					color: $gen-orange;
+					transition: all 0.5s ease-out;
+					&:hover {
+						background: $hov-orange;
+						color: #000;
+					}
+				}
+				a.active {
+					background: $hov-orange;
+					color: #000;
+				}
+			}
+		}
+	}
+}
+.btn-menu {
+	>.fa-caret-down {
+		display: none;
+	}
+}
+@media only screen and (max-width: 900px) {
+	.btn-menu {
+		>.fa-caret-down {
+			display: block;
+			position: absolute;
+			right: 30px;
+			top: 20px;
+			font-size: 28px;
+			color: rgb(242, 146, 9);
+			transition: 0.5s;
+			cursor: pointer;
+			&:hover {
+				color: $hov-orange;
+			}
+		}
+		
+	}
+	.menu {
+		.logo-box {
+			margin-left: 30px;
+		}
+		.list-container {
+			margin-top: 23px;
+			position: fixed;
+			top: 60px;
+			left: -100%;
+			background: $bg-body;
+			width: 100%;
+			height: calc(100vh - 60px);
+			.lists {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				border-top: 2px solid $gen-orange;
+			}
+			ul {
+				padding: 0 !important;
+				li {
+					width: 90%;
+					border-bottom: 2px solid $res-orange;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					a {
+						color: $res-orange;
+						font-size: 20px;
+						text-align: center;
+						padding: 12px 0px;
+						&:hover {
+							background: none;
+							color: $gen-orange;
+						}
+					}
+					a.active {
+						background: none;
+						color: $gen-orange;
+					}
+				}
+			}
+		}
+	}
+}

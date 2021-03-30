@@ -1,0 +1,8 @@
+@mixin team-member ($radius, $border, $width, $height, $mg-bottom, $animation){
+    border-radius: $radius;
+    border: $border;
+    width: $width;
+    height: $height;
+    margin-bottom: $mg-bottom;
+    animation: $animation;
+}

@@ -1,0 +1,154 @@
+/* SERVICIOS */
+@keyframes zoom2 {
+	0% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}
+
+#Servicios {
+	background-image: url(../img/bckg3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	.services-content {
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		.services-title{
+			@include font-size(2rem);
+			text-transform: uppercase;
+			padding-bottom: 10px;
+			color: $gen-orange;
+		}
+		hr {
+			width: 33%;
+			height: 2px;
+			background: $gen-orange;
+			border: none;
+			margin-top: 5px;
+			margin: auto;
+			margin-bottom: 35px;
+		}
+		.carousel-title-box {
+			padding: 25px 25px;
+		}
+		.carousel-title {
+			@include font-size(1.8rem);
+			color: $gen-orange;
+		}
+		.carousel-title1 {
+			font-size: 25px;
+			color: $gen-orange;
+			margin-top: 2em;
+		}
+		.est-pics {
+			display: grid;
+			justify-content: center;
+			grid-template-columns: 30% 30% 30%;
+			grid-column-gap: 40px;
+			justify-items: center;
+			align-items: center;
+			.i3 {
+				img {
+					transition: all 0.25s linear;
+					&:hover {
+						transform: scale(1.2) translateX(-200px);
+					}
+				}
+			}
+			.i1 {
+				img {
+					&:hover {
+						transform: scale(1.2) translateX(200px);
+					}
+				}
+			}
+			.i2 {
+				img {
+					&:hover {
+						animation: zoom2 20s normal;
+					}
+				}
+			}
+		}
+		.carousel {
+			width: 60%;
+			margin-bottom: 40px;
+			#photo-services{
+				width:100%;
+				.carousel-indicators {
+					button {
+						width: 10px;
+						height: 10px;
+						border-radius: 100%;
+						margin: 5px;
+						background-color: $gen-orange;
+					}
+				}
+				
+			}
+		}
+		.video-box {
+			width: 56%;
+			height: 75vh;
+			margin-bottom: 80px;
+		}
+	}
+	.services-title {
+		font-size: 30px;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		color: $gen-orange;
+	}
+}
+.i1 {
+	img {
+		transition: all 0.25s linear;
+	}
+}
+.i2 {
+	img {
+		transition: all 0.25s linear;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#Servicios {
+		.services-content {
+			.est-pics {
+				display: flex;
+				flex-direction: column;
+				.i3 {
+					margin: 1rem;
+					img {
+						transition: all 0.25s linear;
+						&:hover {
+							transform: scale(1.2);
+						}
+					}
+				}
+				.i1 {
+					margin: 1rem;
+					img {
+						&:hover {
+							transform: scale(1.2);
+						}
+					}
+				}
+				.i2 {
+					margin: 1rem;
+					img {
+						&:hover {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+}

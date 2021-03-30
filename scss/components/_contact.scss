@@ -1,0 +1,136 @@
+/* CONTACTO */
+#Contacto {
+	background: $bg-body;
+	width: 100%;
+	height: 100%;
+	.contact-title {
+		@include font-size(2rem);
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		color: $gen-orange;
+	}
+	hr {
+		width: 33%;
+		height: 2px;
+		background: $gen-orange;
+		border: none;
+		margin: 0 auto;
+		margin-top: 5px;
+	}
+	.contact-form {
+		background:  $bg-body;
+		border: 2px solid $gen-orange;
+		border-radius: 2%;
+		margin-top: 3%;
+		margin-bottom: 3%;
+		max-width: 70% !important; 
+		
+		
+		.form-control {
+			border-radius: 1rem;
+		}
+		form {
+			
+			padding: 2rem 4rem 1.5rem;
+			width:100%;
+			.input-container {
+				width: 90%;
+				.form-group {
+					padding: 4px;
+					input {
+						background-color: $bg-body;
+						color: $gen-orange;
+						border: 1px solid $hov-orange;
+						&:focus {
+							outline: none !important;
+							border: 2px solid $gen-orange;
+						}
+						&::placeholder {
+							color:$res-orange;
+						}
+					}
+					label {
+						color: $gen-orange;
+						z-index: 99;
+					}
+					textarea {
+						background-color: $bg-body;
+						color: $gen-orange;
+						border: 1px solid $hov-orange;
+						&:focus {
+							outline: none !important;
+							border: 2px solid $gen-orange;
+						}
+						&::placeholder {
+							color:$res-orange;
+						}
+					}
+				}
+			}
+			.form-group1 {
+				margin: 0 auto;
+				width: 100%;
+				margin-top: 2rem;
+				
+				.btnContact {
+					width: 42%;
+					border: none;
+					border-radius: 1rem;
+					padding: 0.5% 2%;
+					background: $gen-orange;
+					@include font-size(1.5rem);
+					font-weight: 600;
+					color: $bg-body;
+					cursor: pointer;
+				}
+			}	
+			
+		}
+		h3 {
+			margin-bottom: 1%;
+			margin-top: 1%;
+			text-align: center;
+			@include font-size(1.5rem);
+			color: $gen-orange;
+		}
+		
+	}
+	.contact-image {
+		text-align: center;
+		img {
+			border-radius: 5rem;
+			width: 11%;
+			margin-top: -3%;
+			transform: rotate(29deg);
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#Contacto {
+		.contact-form {
+			background:  $bg-body;
+			border: 2px solid $gen-orange;
+			border-radius: 2%;
+			margin-top: 5%;
+			margin-bottom: 5%;
+			max-width: 90% !important; 
+			.form-control {
+				border-radius: 1rem;
+			}
+			.btnContact {
+				width: 25%;
+				border: none;
+				border-radius: 1rem;
+				padding: 0.5% 5%;
+				background: $gen-orange;
+				@include font-size(1.5rem);
+				font-weight: 400;
+				color: $bg-body;
+				cursor: pointer;
+			}
+		}
+		
+	}	
+}
+
