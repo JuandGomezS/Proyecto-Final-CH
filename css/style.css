@@ -71,6 +71,26 @@ p {
   margin-top: 16px;
 }
 
+@media only screen and (max-width: 900px) {
+  .float {
+    position: fixed;
+    width: 45px;
+    height: 43px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+
+  .my-float {
+    margin-top: 0px;
+  }
+}
 /* HEADER */
 .menu {
   width: 100%;
@@ -164,7 +184,7 @@ p {
     margin-left: 30px;
   }
   .menu .list-container {
-    margin-top: 23px;
+    margin-top: 13px;
     position: fixed;
     top: 60px;
     left: -100%;
@@ -518,7 +538,7 @@ p {
   animation: zoom2 20s normal;
 }
 #Servicios .services-content .carousel {
-  width: 60%;
+  width: 65%;
   margin-bottom: 40px;
 }
 #Servicios .services-content .carousel #photo-services {
@@ -532,7 +552,7 @@ p {
   background-color: #f29209;
 }
 #Servicios .services-content .video-box {
-  width: 56%;
+  width: 76%;
   height: 75vh;
   margin-bottom: 80px;
 }
@@ -557,25 +577,22 @@ p {
     flex-direction: column;
   }
   #Servicios .services-content .est-pics .i3 {
-    margin: 1rem;
-  }
-  #Servicios .services-content .est-pics .i3 img {
-    transition: all 0.25s linear;
-  }
-  #Servicios .services-content .est-pics .i3 img:hover {
-    transform: scale(1.2);
+    margin: 1.5rem;
   }
   #Servicios .services-content .est-pics .i1 {
-    margin: 1rem;
-  }
-  #Servicios .services-content .est-pics .i1 img:hover {
-    transform: scale(1.2);
+    margin: 1.5rem;
   }
   #Servicios .services-content .est-pics .i2 {
-    margin: 1rem;
+    margin: 1.5rem;
   }
-  #Servicios .services-content .est-pics .i2 img:hover {
-    transform: scale(1.2);
+  #Servicios .services-content .carousel {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  #Servicios .services-content .video-box {
+    width: 80%;
+    height: 60vh;
+    margin-bottom: 80px;
   }
 }
 /* TESTIMONIOS */
