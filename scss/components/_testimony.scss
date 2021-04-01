@@ -61,6 +61,21 @@
 	}
 }
 
+@media only screen and (max-width: 768px) {
+	#Testimonios {
+		.Testimony-box {
+			.testimony-card {
+				.testimony-text{
+					p{
+						@include font-size(0.9rem);
+					}
+				}
+			}
+		}
+		
+	}	
+}
+
 @media only screen and (max-width: 1237px) {
 	#Testimonios {
 		.Testimony-box {
@@ -76,3 +91,4 @@
 		
 	}	
 }
+

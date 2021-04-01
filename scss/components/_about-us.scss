@@ -124,6 +124,30 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	#Nosotros {
+		.about-us {
+			.who-we-r {
+				.p-who-we-r {
+					@include font-size(0.9rem);
+					margin: 0 1.5rem;
+				}
+			}
+			.raven-team {
+				.team-box {
+					.team-member {	
+						width: 95%;					
+						.p-team {
+							@include font-size(0.9rem);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1237px) {
 	#Nosotros {
 		.about-us {
@@ -137,7 +161,7 @@
 						flex-direction: column;
 						align-items: center;
 						width: 90%;
-
+						
 					}
 				}
 			}

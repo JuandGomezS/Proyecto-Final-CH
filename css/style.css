@@ -445,6 +445,18 @@ p {
   width: 90%;
 }
 
+@media only screen and (max-width: 768px) {
+  #Nosotros .about-us .who-we-r .p-who-we-r {
+    font-size: 0.9rem;
+    margin: 0 1.5rem;
+  }
+  #Nosotros .about-us .raven-team .team-box .team-member {
+    width: 95%;
+  }
+  #Nosotros .about-us .raven-team .team-box .team-member .p-team {
+    font-size: 0.9rem;
+  }
+}
 @media only screen and (max-width: 1237px) {
   #Nosotros .about-us .raven-team .team-box {
     margin: 0 auto;
@@ -663,6 +675,11 @@ p {
   padding: 10px;
 }
 
+@media only screen and (max-width: 768px) {
+  #Testimonios .Testimony-box .testimony-card .testimony-text p {
+    font-size: 0.9rem;
+  }
+}
 @media only screen and (max-width: 1237px) {
   #Testimonios .Testimony-box {
     display: flex;
