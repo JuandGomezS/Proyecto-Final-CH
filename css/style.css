@@ -820,6 +820,9 @@ p {
   #Contacto .contact-form .form-control {
     border-radius: 1rem;
   }
+  #Contacto .contact-form form {
+    padding: 2rem 1rem 1.5rem;
+  }
   #Contacto .contact-form .btnContact {
     width: 25%;
     border: none;
