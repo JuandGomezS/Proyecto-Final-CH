@@ -479,6 +479,14 @@ p {
     transform: scale(1.2);
   }
 }
+@keyframes zoom3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #Servicios {
   background-image: url(../img/bckg3.jpg);
   background-attachment: fixed;
@@ -543,8 +551,14 @@ p {
 #Servicios .services-content .est-pics .i3 img:hover {
   transform: scale(1.2) translateX(-200px);
 }
+#Servicios .services-content .est-pics .i1 img {
+  transition: all 0.25s linear;
+}
 #Servicios .services-content .est-pics .i1 img:hover {
   transform: scale(1.2) translateX(200px);
+}
+#Servicios .services-content .est-pics .i2 img {
+  transition: all 0.25s linear;
 }
 #Servicios .services-content .est-pics .i2 img:hover {
   animation: zoom2 20s normal;
@@ -575,14 +589,6 @@ p {
   color: #f29209;
 }
 
-.i1 img {
-  transition: all 0.25s linear;
-}
-
-.i2 img {
-  transition: all 0.25s linear;
-}
-
 @media only screen and (max-width: 900px) {
   #Servicios .services-content .est-pics {
     display: flex;
@@ -591,11 +597,29 @@ p {
   #Servicios .services-content .est-pics .i3 {
     margin: 1.5rem;
   }
+  #Servicios .services-content .est-pics .i3 img {
+    transition: all 0.25s linear;
+  }
+  #Servicios .services-content .est-pics .i3 img:hover {
+    transform: scale(1) translateX(0px);
+  }
   #Servicios .services-content .est-pics .i1 {
     margin: 1.5rem;
   }
+  #Servicios .services-content .est-pics .i1 img {
+    transition: all 0.25s linear;
+  }
+  #Servicios .services-content .est-pics .i1 img:hover {
+    transform: scale(1) translateX(0px);
+  }
   #Servicios .services-content .est-pics .i2 {
     margin: 1.5rem;
+  }
+  #Servicios .services-content .est-pics .i2 img {
+    transition: all 0.25s linear;
+  }
+  #Servicios .services-content .est-pics .i2 img:hover {
+    animation: zoom3 20s normal;
   }
   #Servicios .services-content .carousel {
     width: 80%;
@@ -855,7 +879,7 @@ footer .footerblock {
   align-items: stretch;
 }
 footer .footerblock .footerblock__info .footerblock__info__text {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #f29209;
   padding-top: 0.5rem;
 }
