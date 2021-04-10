@@ -1,8 +1,6 @@
 // Navegation Menu
 let btnMenu = document.querySelector(".btn-menu");
-let barIconX = document.querySelector(".btn-menu i");
 let menu = document.querySelector(".list-container");
-let menuContent = document.querySelector(".menu");
 var activador = true;
 
 btnMenu.addEventListener("click", (event) => {
