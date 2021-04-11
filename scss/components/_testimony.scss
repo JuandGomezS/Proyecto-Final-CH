@@ -63,6 +63,7 @@
 
 @media only screen and (max-width: 768px) {
 	#Testimonios {
+		height: 100%;
 		.Testimony-box {
 			.testimony-card {
 				.testimony-text{
@@ -78,6 +79,7 @@
 
 @media only screen and (max-width: 1237px) {
 	#Testimonios {
+		height : 100%;
 		.Testimony-box {
 			display: flex;
 			flex-direction: column;

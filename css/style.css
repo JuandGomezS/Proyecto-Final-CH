@@ -91,6 +91,24 @@ p {
     margin-top: 0px;
   }
 }
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #6b4209;
+  border-radius: 1rem;
+  background-color: #f29209;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
 /* HEADER */
 .menu {
   width: 100%;
@@ -700,11 +718,17 @@ p {
 }
 
 @media only screen and (max-width: 768px) {
+  #Testimonios {
+    height: 100%;
+  }
   #Testimonios .Testimony-box .testimony-card .testimony-text p {
     font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 1237px) {
+  #Testimonios {
+    height: 100%;
+  }
   #Testimonios .Testimony-box {
     display: flex;
     flex-direction: column;
@@ -894,11 +918,20 @@ footer .footerblock .footerblock__info .footerblock__info__icons .social-network
 footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoFacebook:hover {
   background-color: #3B5998;
 }
+footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoFacebook:hover i {
+  color: white;
+}
 footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoInstagram:hover {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
+footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoInstagram:hover i {
+  color: white;
+}
 footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoMail:hover {
   background-color: #BD3518;
+}
+footer .footerblock .footerblock__info .footerblock__info__icons .social-network a.icoMail:hover i {
+  color: white;
 }
 footer .footerblock .footerblock__info .footerblock__info__icons .social-circle li {
   list-style: none;
@@ -928,19 +961,7 @@ footer .footerblock .footerblock__info .footerblock__info__icons .social-circle 
   -moz-transition: all 0.8s;
   -o-transition: all 0.8s;
   -ms-transition: all 0.8s;
-  transition: all 0.8s;
-}
-footer .footerblock .footerblock__info .footerblock__info__icons .social-circle li i:hover {
-  margin: 0;
-  font-size: 1.7rem;
-  line-height: 50px;
-  text-align: center;
-  color: white;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 footer .footerblock .footerblock__iframe {
   padding-right: 4rem;

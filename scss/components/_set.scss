@@ -84,3 +84,19 @@ p {
 
 
 }
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 2px solid $res-orange;
+    border-radius: 1rem;
+    background-color: $gen-orange;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}

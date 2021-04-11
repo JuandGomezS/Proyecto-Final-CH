@@ -27,15 +27,24 @@ footer {
 						&:hover {
 							background-color: #3B5998;
 						}
+						&:hover i{
+							color: white;
+						}
 					}
 					a.icoInstagram {
 						&:hover {
 							background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 						}
+						&:hover i{
+							color: white;
+						}
 					}
 					a.icoMail {
 						&:hover {
 							background-color: #BD3518;
+						}
+						&:hover i{
+							color: white;
 						}
 					}
 				}
@@ -67,19 +76,8 @@ footer {
 							-moz-transition: all 0.8s;
 							-o-transition: all 0.8s;
 							-ms-transition: all 0.8s;
-							transition: all 0.8s;
-							&:hover {
-								margin: 0;
-								font-size: 1.7rem;
-								line-height: 50px;
-								text-align: center;
-								color: white;
-								-webkit-transition: all 0.8s;
-								-moz-transition: all 0.8s;
-								-o-transition: all 0.8s;
-								-ms-transition: all 0.8s;
-								transition: all 0.5s;
-							}
+							transition: all 0.2s;
+							
 						}
 					}
 				}
