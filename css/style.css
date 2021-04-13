@@ -834,6 +834,9 @@ p {
     font-size: 1.5rem;
   }
 }
+#Contacto .contact-form form .form-group1 .btnContact:hover {
+  background: #c17407;
+}
 #Contacto .contact-form h3 {
   margin-bottom: 1%;
   margin-top: 1%;

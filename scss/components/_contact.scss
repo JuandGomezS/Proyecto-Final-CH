@@ -82,6 +82,11 @@
 					font-weight: 600;
 					color: $bg-body;
 					cursor: pointer;
+					&:hover {
+						background: $hov-orange;
+					}
+
+				
 				}
 			}	
 			
