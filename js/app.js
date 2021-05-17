@@ -81,12 +81,13 @@ document.getElementById("est-shirts").onclick= () => {
   preciosProductosEst.push(camisetas);
   let cantidad = parseInt(prompt(`¿Cuántas ${camisetas.nombre.toLowerCase()} quieres estampar?`));
   camisetas.sumaIva();
-
-  let myModalEl = document.getElementById('estampados')
+  
+  let myModalEl = document.getElementById('estampados1')
   let modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
   modal.hide();
 
   alert(`El costo es de: $ ${cantidad*camisetas.precio}`);
+  
 } 
 
 document.getElementById("est-cup").onclick= () => {
@@ -95,7 +96,7 @@ document.getElementById("est-cup").onclick= () => {
   let cantidad = parseInt(prompt(`¿Cuántas ${posillos.nombre.toLowerCase()} quieres estampar?`));
   posillos.sumaIva();
   
-  let myModalEl = document.getElementById('estampados')
+  let myModalEl = document.getElementById('estampados1')
   let modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
   modal.hide();
 
@@ -108,7 +109,7 @@ document.getElementById("est-cap").onclick= () => {
   let cantidad = parseInt(prompt(`¿Cuántas ${gorras.nombre.toLowerCase()} quieres estampar?`));
   gorras.sumaIva();
   
-  let myModalEl = document.getElementById('estampados')
+  let myModalEl = document.getElementById('estampados1')
   let modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
   modal.hide();
   
@@ -121,7 +122,7 @@ document.getElementById("est-dish").onclick= () => {
   let cantidad = parseInt(prompt(`¿Cuántas ${platos.nombre.toLowerCase()} quieres estampar?`));
   platos.sumaIva();
   
-  let myModalEl = document.getElementById('estampados')
+  let myModalEl = document.getElementById('estampados1')
   let modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
   modal.hide();
   
