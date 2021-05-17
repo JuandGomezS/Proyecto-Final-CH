@@ -11,30 +11,34 @@
 		width: 100%;
 	}
 	h1 {
-		@include font-size(3rem);
+		@include font-size(4rem);
 		text-transform: uppercase;
 		color: $gen-orange;
 		font-weight: 200;
+		font-family:"Bebas Neue", cursive;
 	}
 	hr {
 		width: 20%;
-		height: 2px;
+		height: 1px;
 		background: $gen-orange !important;
 		opacity: 100% !important;
 		border: none;
 		margin-top: 5px;
 	}
 	h2 {
-		@include font-size(1.5rem);
+		@include font-size(2rem);
 		color: $gen-orange;
-		font-weight: 200;
+		font-weight: 100;
 		margin-top: 20px;
+		text-transform: uppercase;
+		font-family:"Bebas Neue", cursive;
+		letter-spacing: 0.15em;
 	}
 	button {
 		width: 170px;
 		height: 40px;
 		background: $gen-orange;
-		border-radius: 24px;
+		border-radius: 0px;
 		border: none;
 		outline: none;
 		@include font-size(1.5rem);
@@ -43,12 +47,19 @@
 		transition: 0.2s;
 		z-index: 2;
 		&:hover {
-			background: $hov-orange;
+			background: black;
+			border: 1px solid $gen-orange;
+			a {
+				color: $gen-orange;
+			}
 		}
 		a {
+			text-transform: uppercase;
 			text-decoration: none;
 			color: $bg-body;
-			font-family: "Montserrat", sans-serif;
+			font-family:"Bebas Neue", cursive;
+			@include font-size(1.5rem);
+			
 		}
 	}
 }

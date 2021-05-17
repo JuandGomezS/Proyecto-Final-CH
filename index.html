@@ -17,7 +17,7 @@
   <meta property="og:title" content="Personaliza tu vida" />
   <meta property="og:description"
     content="Agencia de arte digital, nos dedicamos a desarrollar piezas de arte publicitario digital, estampados, fotografía y video." />
-  <meta property="og:image" content="https://ravenart.000webhostapp.com/img/logo.jpg"/>
+  <meta property="og:image" content="https://ravenart.000webhostapp.com/img/logo.jpg" />
   <meta property="og:image:width" content="640" />
   <meta property="og:image:height" content="382" />
   <meta property="og:image:alt" content="Raven Art | Personaliza tu vida" ch-meta-content="SITE.title" />
@@ -58,6 +58,12 @@
     <i class="fa fa-whatsapp my-float"></i>
   </a>
 
+  <!-- BOTON Presupuestos -->
+
+  <a href="" class="float1" target="_blank" data-bs-toggle="modal" data-bs-target="#cotModal">
+    <i class="fas fa-search-dollar my-float"></i>
+  </a>
+
   <!--HEADER-->
   <header id="header">
     <nav class="menu d-flex justify-content-between align-items-center fixed-top">
@@ -74,16 +80,138 @@
           <li><a href="#Servicios">Servicios</a></li>
           <li><a href="#Testimonios">Testimonios</a></li>
           <li><a href="#Contacto">Contacto</a></li>
+          <li>
+            <a data-bs-toggle="modal" data-bs-target="#cotModal">presupuestos</a>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
 
+  <!-- Modal -->
+  <div class="modal fade" id="cotModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-row justify-content-center align-items-center">
+          <a href="" class="service1" target="_blank" data-bs-toggle="modal" data-bs-target="#estampados" data-bs-dismiss="modal">
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <i class="fas fa-spray-can"></i>
+              <P>ESTAMPADOS</P>
+            </div>            
+          </a>
+          <a href="" class="service2" target="_blank" data-bs-toggle="modal" data-bs-target="#foto" data-bs-dismiss="modal">
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <i class="fas fa-camera-retro"></i>
+              <P>FOTOGRAFÍA</P>
+            </div>
+          </a>
+          <a href="" class="service3" target="_blank" data-bs-toggle="modal" data-bs-target="#video" data-bs-dismiss="modal">
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <i class="fas fa-video"></i>
+              <P>VIDEO</P>
+            </div>
+          </a>
+          <a href="" class="service4" target="_blank" data-bs-toggle="modal" data-bs-target="#pub" data-bs-dismiss="modal"> 
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <i class="fas fa-ad"></i>
+              <P>PUBLICIDAD</P>
+            </div>
+          </a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="estampados" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Hide this modal and show the first with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button class="btn btn-primary">CALCULAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="foto" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          FOTO
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button class="btn btn-primary">CALCULAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="video" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          VIDEO
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button class="btn btn-primary">CALCULAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="pub" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          PUBLICIDAD
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button class="btn btn-primary">CALCULAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main>
     <!--Sección de Inicio-->
 
-    <section id="Home"
-      class="container-fluid d-flex justify-content-center align-items-center flex-column position-relative">
+    <section id="Home" class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-items-center
+          flex-column
+          position-relative
+        ">
       <div id="particles-js1" class="position-absolute"></div>
       <h1>Raven Art</h1>
       <!-- SEO -->
@@ -96,7 +224,13 @@
       </button>
     </section>
     <!--Sección de Nosotros-->
-    <section class="container-fluid d-flex justify-content-center align-items-center flex-column" id="Nosotros">
+    <section class="
+          container-fluid
+          d-flex
+          justify-content-center
+          align-items-center
+          flex-column
+        " id="Nosotros">
       <div class="titles">
         <h2 class="us-title">Acerca de Nosotros</h2>
       </div>
@@ -106,13 +240,14 @@
           <h3 class="h31">¿Quiénes somos?</h3>
 
           <p class="p-who-we-r text-center">
-            Raven Art es una empresa que nace en Noviembre de 2020 donde guiados por el amor al arte digital
-            (Fotografía, Edición y diseño),
-            buscamos que todo aquel que porte, haga uso, vea, sienta y escuche un producto RAVEN tenga una experiencia
-            que le permita de una u otra manera
-            sentir la dedicación y empeño del artista detrás.
-            Somos una empresa donde amamos trabajar para que las personas se sientan únicas, identificadas y en armonía
-            con su personalidad.
+            Raven Art es una empresa que nace en Noviembre de 2020 donde
+            guiados por el amor al arte digital (Fotografía, Edición y
+            diseño), buscamos que todo aquel que porte, haga uso, vea, sienta
+            y escuche un producto RAVEN tenga una experiencia que le permita
+            de una u otra manera sentir la dedicación y empeño del artista
+            detrás. Somos una empresa donde amamos trabajar para que las
+            personas se sientan únicas, identificadas y en armonía con su
+            personalidad.
           </p>
         </div>
 
@@ -126,8 +261,9 @@
               </div>
               <h4 class="name-team">Camilo Cuervo</h4>
               <p class="p-team">
-                "Amante del Rock y Heavy metal español y guitarrista; se encarga de fotografía, diseño y edición de
-                productos de arte digital, Apodo: Cuervirris"
+                "Amante del Rock y Heavy metal español y guitarrista; se
+                encarga de fotografía, diseño y edición de productos de arte
+                digital, Apodo: Cuervirris"
               </p>
             </div>
 
@@ -137,8 +273,9 @@
               </div>
               <h4 class="name-team">Alejandro Cuervo</h4>
               <p class="p-team">
-                "Al igual que su hermano, amante del Rock y Heavy metal; se encarga de fotografía, diseño y edición de
-                productos de arte digital, Apodo: Alejo"
+                "Al igual que su hermano, amante del Rock y Heavy metal; se
+                encarga de fotografía, diseño y edición de productos de arte
+                digital, Apodo: Alejo"
               </p>
             </div>
 
@@ -148,8 +285,9 @@
               </div>
               <h4 class="name-team">Juan Gómez</h4>
               <p class="p-team">
-                "Nerd consagrado, amante de Queen y la buena música, bajista y jugador de tenis de mesa, encargado de
-                Desarrollo Web, Apodo: Juanete"
+                "Nerd consagrado, amante de Queen y la buena música, bajista y
+                jugador de tenis de mesa, encargado de Desarrollo Web, Apodo:
+                Juanete"
               </p>
             </div>
           </div>
@@ -159,7 +297,13 @@
 
     <!--Sección de Productos-->
     <section id="Servicios">
-      <div class="services-content position-relative d-flex flex-column align-items-center">
+      <div class="
+            services-content
+            position-relative
+            d-flex
+            flex-column
+            align-items-center
+          ">
         <div class="titles">
           <h2 class="services-title">Servicios</h2>
         </div>
@@ -187,8 +331,13 @@
           <h3 class="carousel-title1">Fotografía</h3>
         </div>
 
-        <div class="carousel d-flex flex-column justify-content-center align-items-center" data-aos="flip-down"
-          data-aos-offset="400">
+        <div class="
+              carousel
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+            " data-aos="flip-down" data-aos-offset="400">
           <div id="photo-services" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#photo-services" data-bs-slide-to="0" class="active"
@@ -243,8 +392,13 @@
           <h3 class="carousel-title">Video</h3>
         </div>
 
-        <div class="video-box d-flex flex-column justify-content-center align-items-center" data-aos="fade-down"
-          data-aos-offset="300">
+        <div class="
+              video-box
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+            " data-aos="fade-down" data-aos-offset="300">
           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/oZDJgQ-AuRA" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
@@ -266,8 +420,9 @@
           <div class="testimony-text">
             <h4>Paola Vargas</h4>
             <p>
-              "Quiero agradecer a Raven por su trabajo, son personas excelentes en lo hacen, me ha encantado lo que e
-              adquirido con ellos súper recomendados."
+              "Quiero agradecer a Raven por su trabajo, son personas
+              excelentes en lo hacen, me ha encantado lo que e adquirido con
+              ellos súper recomendados."
             </p>
           </div>
         </div>
@@ -279,8 +434,9 @@
           <div class="testimony-text">
             <h4>Paula Andrea Clavijo</h4>
             <p>
-              "Realmente soy feliz con lo que hace esta empresa tienen cosas de muy buen material y tienen mucha
-              creatividad y es lo más importante la hora de lucir una prenda única."
+              "Realmente soy feliz con lo que hace esta empresa tienen cosas
+              de muy buen material y tienen mucha creatividad y es lo más
+              importante la hora de lucir una prenda única."
             </p>
           </div>
         </div>
@@ -292,9 +448,10 @@
           <div class="testimony-text">
             <h4>Erika Santafé</h4>
             <p>
-              "El trabajo que desarrollan es excelente, los tiempos de entrega se cumplen siempre, 
-              además una cosa maravillosa es que son muy receptivos con respecto a las dudas, 
-              consultas y/o dudas que surjan durante el desarrollo del producto contratado."
+              "El trabajo que desarrollan es excelente, los tiempos de entrega
+              se cumplen siempre, además una cosa maravillosa es que son muy
+              receptivos con respecto a las dudas, consultas y/o dudas que
+              surjan durante el desarrollo del producto contratado."
             </p>
           </div>
         </div>
@@ -306,9 +463,10 @@
           <div class="testimony-text">
             <h4>Rafael Bautista</h4>
             <p>
-              "Desde mi experiencia como ilustrador, ingeniero y amante del arte digital, 
-              puedo decir que su trabajo es muy profesional y que en cada trazo, diseño y 
-              producto terminado se nota el amor y deseo por entregar algo bien terminado."
+              "Desde mi experiencia como ilustrador, ingeniero y amante del
+              arte digital, puedo decir que su trabajo es muy profesional y
+              que en cada trazo, diseño y producto terminado se nota el amor y
+              deseo por entregar algo bien terminado."
             </p>
           </div>
         </div>
@@ -351,7 +509,12 @@
                 style="width: 100%; height: 150px"></textarea>
             </div>
           </div>
-          <div class="form-group1 d-flex justify-content-center align-items-center">
+          <div class="
+                form-group1
+                d-flex
+                justify-content-center
+                align-items-center
+              ">
             <input type="submit" name="btnSubmit" class="btnContact" value="Enviar" />
           </div>
         </form>
@@ -362,7 +525,13 @@
   <!--Footer-->
   <footer class="container-fluid">
     <div class="footerblock container-fluid">
-      <div class="footerblock__info d-flex flex-column justify-content-center align-items-center">
+      <div class="
+            footerblock__info
+            d-flex
+            flex-column
+            justify-content-center
+            align-items-center
+          ">
         <p class="footerblock__info__text">
           Raven Art - Personaliza tu vida.
         </p>
@@ -381,13 +550,13 @@
                 title="Instagram"><i class="fab fa-instagram icon-instagram" aria-hidden="true"></i></a>
             </li>
             <li>
-              <a href="mailto:ravenart.personaliza@gmail.com?Subject=Tengo%20una%20consulta" class="icoMail" title="Mail"><i class="far fa-envelope"
-                  aria-hidden="true"></i></a>
+              <a href="mailto:ravenart.personaliza@gmail.com?Subject=Tengo%20una%20consulta" class="icoMail"
+                title="Mail"><i class="far fa-envelope" aria-hidden="true"></i></a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="footerblock__iframe" style="filter:invert(80%)">
+      <div class="footerblock__iframe" style="filter: invert(80%)">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.8075167636555!2d-74.01865818741346!3d4.921120977534984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNTUnMTYuMiJOIDc0wrAwMScwNC42Ilc!5e0!3m2!1ses!2sco!4v1616039391334!5m2!1ses!2sco"
           width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>

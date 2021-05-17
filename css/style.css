@@ -44,6 +44,7 @@ p {
   margin: auto;
   text-align: center;
   padding-top: 100px;
+  font-family: "Bebas Neue", cursive;
 }
 
 /* Botón de whastapp */
@@ -67,8 +68,30 @@ p {
   background-color: #fff;
 }
 
+.float1 {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 110px;
+  right: 40px;
+  background-color: #202020;
+  color: #f29209;
+  border: 2px solid #f29209;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  /* box-shadow: 2px 2px 3px #999; */
+  z-index: 100;
+}
+.float1:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #f29209;
+  border: 2px solid black;
+}
+
 .my-float {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -109,12 +132,17 @@ p {
   background-color: transparent;
 }
 
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #f29209;
+}
+
 /* HEADER */
 .menu {
   width: 100%;
   height: 75px;
   background: black;
-  border-bottom: 2px solid #f29209;
+  border-bottom: 1px solid #f29209;
 }
 .menu .logo-box {
   margin-left: 20px;
@@ -163,20 +191,20 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   margin: 0px 10px;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 2px 10px;
+  border-radius: 0px;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 22px;
   color: #f29209;
-  transition: all 0.5s ease-out;
+  transition: all 0.2s ease-out;
+  font-family: "Bebas Neue", cursive;
 }
 .menu .list-container ul li a:hover {
-  background: #c17407;
-  color: #000;
+  border-bottom: 1px solid #f29209;
+  color: #f29209;
 }
 .menu .list-container ul li a.active {
-  background: #c17407;
-  color: #000;
+  border-bottom: 1px solid #f29209;
 }
 
 .btn-menu > .fa-caret-down {
@@ -258,40 +286,44 @@ p {
   width: 100%;
 }
 #Home h1 {
-  font-size: calc(1.425rem + 2.1vw);
+  font-size: calc(1.525rem + 3.3vw);
   text-transform: uppercase;
   color: #f29209;
   font-weight: 200;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Home h1 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 }
 #Home hr {
   width: 20%;
-  height: 2px;
+  height: 1px;
   background: #f29209 !important;
   opacity: 100% !important;
   border: none;
   margin-top: 5px;
 }
 #Home h2 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.325rem + 0.9vw);
   color: #f29209;
-  font-weight: 200;
+  font-weight: 100;
   margin-top: 20px;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.15em;
 }
 @media (min-width: 1200px) {
   #Home h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 #Home button {
   width: 170px;
   height: 40px;
   background: #f29209;
-  border-radius: 24px;
+  border-radius: 0px;
   border: none;
   outline: none;
   font-size: calc(1.275rem + 0.3vw);
@@ -306,12 +338,23 @@ p {
   }
 }
 #Home button:hover {
-  background: #c17407;
+  background: black;
+  border: 1px solid #f29209;
+}
+#Home button:hover a {
+  color: #f29209;
 }
 #Home button a {
+  text-transform: uppercase;
   text-decoration: none;
   color: black;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  #Home button a {
+    font-size: 1.5rem;
+  }
 }
 
 /* NOSOTROS */
@@ -359,18 +402,18 @@ p {
   width: 100%;
 }
 #Nosotros .us-title {
-  font-size: calc(1.305rem + 0.66vw);
+  font-size: calc(1.425rem + 2.1vw);
   text-transform: uppercase;
   padding-bottom: 5px;
 }
 @media (min-width: 1200px) {
   #Nosotros .us-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 }
 #Nosotros hr {
   width: 33%;
-  height: 2px;
+  height: 1px;
   background: black;
   border: none;
   margin-top: 5px;
@@ -378,13 +421,14 @@ p {
   margin-bottom: 35px;
 }
 #Nosotros .about-us .who-we-r .h31 {
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.325rem + 0.9vw);
   margin: auto;
   padding-bottom: 25px;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Nosotros .about-us .who-we-r .h31 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 #Nosotros .about-us .who-we-r .p-who-we-r {
@@ -393,19 +437,20 @@ p {
   margin: 0 4rem;
 }
 #Nosotros .about-us .raven-team .h32 {
-  font-size: calc(1.305rem + 0.66vw);
+  font-size: calc(1.375rem + 1.5vw);
   margin: auto;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   text-transform: uppercase;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Nosotros .about-us .raven-team .h32 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
 }
 #Nosotros .about-us .raven-team hr {
   width: 33%;
-  height: 2px;
+  height: 1px;
   background: black;
   border: none;
   margin-top: 5px;
@@ -447,14 +492,15 @@ p {
   animation: rotar 2s infinite;
 }
 #Nosotros .about-us .raven-team .team-box .team-member .name-team {
-  font-size: calc(1.255rem + 0.06vw);
+  font-size: calc(1.275rem + 0.3vw);
   padding-bottom: 10px;
   text-align: center;
   width: 75%;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Nosotros .about-us .raven-team .team-box .team-member .name-team {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 #Nosotros .about-us .raven-team .team-box .team-member .p-team {
@@ -519,14 +565,14 @@ p {
   background: rgba(0, 0, 0, 0.8);
 }
 #Servicios .services-content .services-title {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.425rem + 2.1vw);
   text-transform: uppercase;
   padding-bottom: 10px;
   color: #f29209;
 }
 @media (min-width: 1200px) {
   #Servicios .services-content .services-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 #Servicios .services-content hr {
@@ -542,18 +588,25 @@ p {
   padding: 25px 25px;
 }
 #Servicios .services-content .carousel-title {
-  font-size: calc(1.305rem + 0.66vw);
+  font-size: calc(1.325rem + 0.9vw);
   color: #f29209;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Servicios .services-content .carousel-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 #Servicios .services-content .carousel-title1 {
-  font-size: 25px;
+  font-size: calc(1.325rem + 0.9vw);
   color: #f29209;
   margin-top: 2em;
+  font-family: "Bebas Neue", cursive;
+}
+@media (min-width: 1200px) {
+  #Servicios .services-content .carousel-title1 {
+    font-size: 2rem;
+  }
 }
 #Servicios .services-content .est-pics {
   display: grid;
@@ -656,19 +709,19 @@ p {
   height: 100%;
 }
 #Testimonios .Testimony-title {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.425rem + 2.1vw);
   text-transform: uppercase;
   padding-bottom: 10px;
   color: black;
 }
 @media (min-width: 1200px) {
   #Testimonios .Testimony-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 #Testimonios hr {
   width: 33%;
-  height: 2px;
+  height: 1px;
   background: black;
   border: none;
   margin: 0 auto;
@@ -682,10 +735,11 @@ p {
   width: 45%;
   margin: 3px;
   transition: 100ms;
-  border-radius: 20px;
+  border-radius: 0px;
+  border: 1px solid #f29209;
 }
 #Testimonios .Testimony-box .testimony-card:hover {
-  border: 2px solid black;
+  border: 1px solid black;
 }
 #Testimonios .Testimony-box .testimony-card .card-img {
   width: 100%;
@@ -706,9 +760,15 @@ p {
   cursor: pointer;
 }
 #Testimonios .Testimony-box .testimony-card .testimony-text h4 {
-  font-size: 1.15rem;
+  font-size: calc(1.275rem + 0.3vw);
   text-align: center;
   padding-bottom: 10px;
+  font-family: "Bebas Neue", cursive;
+}
+@media (min-width: 1200px) {
+  #Testimonios .Testimony-box .testimony-card .testimony-text h4 {
+    font-size: 1.5rem;
+  }
 }
 #Testimonios .Testimony-box .testimony-card .testimony-text p {
   font-size: 1rem;
@@ -746,19 +806,19 @@ p {
   height: 100%;
 }
 #Contacto .contact-title {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.425rem + 2.1vw);
   text-transform: uppercase;
   padding-bottom: 10px;
   color: #f29209;
 }
 @media (min-width: 1200px) {
   #Contacto .contact-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 #Contacto hr {
   width: 33%;
-  height: 2px;
+  height: 1px;
   background: #f29209;
   border: none;
   margin: 0 auto;
@@ -766,8 +826,8 @@ p {
 }
 #Contacto .contact-form {
   background: black;
-  border: 2px solid #f29209;
-  border-radius: 2%;
+  border: 1px solid #f29209;
+  border-radius: 0%;
   margin-top: 3%;
   margin-bottom: 3%;
   max-width: 70% !important;
@@ -787,24 +847,41 @@ p {
 }
 #Contacto .contact-form form .input-container .form-group input {
   background-color: black;
-  color: #f29209;
+  color: #f29209 !important;
   border: 1px solid #c17407;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
+  padding-bottom: 0;
+  border-radius: 0;
 }
 #Contacto .contact-form form .input-container .form-group input:focus {
   outline: none !important;
   border: 2px solid #f29209;
+  background-color: black;
 }
 #Contacto .contact-form form .input-container .form-group input::placeholder {
   color: #6b4209;
+  font-size: 1.1rem;
+  font-family: "Bebas Neue", cursive;
 }
 #Contacto .contact-form form .input-container .form-group label {
   color: #f29209;
   z-index: 99;
+  font-family: "Bebas Neue", cursive;
+  font-size: calc(1.255rem + 0.06vw);
+}
+@media (min-width: 1200px) {
+  #Contacto .contact-form form .input-container .form-group label {
+    font-size: 1.3rem;
+  }
 }
 #Contacto .contact-form form .input-container .form-group textarea {
   background-color: black;
   color: #f29209;
   border: 1px solid #c17407;
+  border-radius: 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
 }
 #Contacto .contact-form form .input-container .form-group textarea:focus {
   outline: none !important;
@@ -812,6 +889,8 @@ p {
 }
 #Contacto .contact-form form .input-container .form-group textarea::placeholder {
   color: #6b4209;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.1rem;
 }
 #Contacto .contact-form form .form-group1 {
   margin: 0 auto;
@@ -821,32 +900,38 @@ p {
 #Contacto .contact-form form .form-group1 .btnContact {
   width: 42%;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0;
   padding: 0.5% 2%;
   background: #f29209;
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.325rem + 0.9vw);
   font-weight: 600;
   color: black;
   cursor: pointer;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.15em;
+  border: 1px solid #f29209;
 }
 @media (min-width: 1200px) {
   #Contacto .contact-form form .form-group1 .btnContact {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 #Contacto .contact-form form .form-group1 .btnContact:hover {
-  background: #c17407;
+  background: black;
+  color: #f29209;
+  border: 1px solid #f29209;
 }
 #Contacto .contact-form h3 {
   margin-bottom: 1%;
   margin-top: 1%;
   text-align: center;
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.325rem + 0.9vw);
   color: #f29209;
+  font-family: "Bebas Neue", cursive;
 }
 @media (min-width: 1200px) {
   #Contacto .contact-form h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 #Contacto .contact-image {
@@ -893,7 +978,7 @@ p {
 }
 /* FOOTER */
 footer {
-  border-top: 2px solid #f29209;
+  border-top: 1px solid #f29209;
   padding: 4rem;
 }
 footer .footerblock {

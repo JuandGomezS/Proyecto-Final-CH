@@ -29,7 +29,7 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0.8);
 		.services-title{
-			@include font-size(2rem);
+			@include font-size(3rem);
 			text-transform: uppercase;
 			padding-bottom: 10px;
 			color: $gen-orange;
@@ -47,13 +47,15 @@
 			padding: 25px 25px;
 		}
 		.carousel-title {
-			@include font-size(1.8rem);
+			@include font-size(2rem);
 			color: $gen-orange;
+			font-family:"Bebas Neue", cursive;
 		}
 		.carousel-title1 {
-			font-size: 25px;
+			@include font-size(2rem);	
 			color: $gen-orange;
 			margin-top: 2em;
+			font-family:"Bebas Neue", cursive;
 		}
 		.est-pics {
 			display: grid;

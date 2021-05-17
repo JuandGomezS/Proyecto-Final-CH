@@ -4,14 +4,14 @@
 	width: 100%;
 	height: 100%;
 	.contact-title {
-		@include font-size(2rem);
+		@include font-size(3rem);
 		text-transform: uppercase;
 		padding-bottom: 10px;
 		color: $gen-orange;
 	}
 	hr {
 		width: 33%;
-		height: 2px;
+		height: 1px;
 		background: $gen-orange;
 		border: none;
 		margin: 0 auto;
@@ -19,8 +19,8 @@
 	}
 	.contact-form {
 		background:  $bg-body;
-		border: 2px solid $gen-orange;
-		border-radius: 2%;
+		border: 1px solid $gen-orange;
+		border-radius: 0%;
 		margin-top: 3%;
 		margin-bottom: 3%;
 		max-width: 70% !important; 
@@ -39,30 +39,45 @@
 					padding: 4px;
 					input {
 						background-color: $bg-body;
-						color: $gen-orange;
+						color: $gen-orange !important;
 						border: 1px solid $hov-orange;
+						font-family:"Bebas Neue", cursive;
+						@include font-size(1.1rem);
+						padding-bottom: 0;
+						border-radius: 0;
 						&:focus {
 							outline: none !important;
 							border: 2px solid $gen-orange;
+							background-color: black;
 						}
+						
 						&::placeholder {
 							color:$res-orange;
+							@include font-size(1.1rem);
+							font-family:"Bebas Neue", cursive;
 						}
 					}
 					label {
 						color: $gen-orange;
 						z-index: 99;
+						font-family:"Bebas Neue", cursive;
+						@include font-size(1.3rem);
 					}
 					textarea {
 						background-color: $bg-body;
 						color: $gen-orange;
 						border: 1px solid $hov-orange;
+						border-radius: 0;
+						font-family:"Bebas Neue", cursive;
+						@include font-size(1.1rem);
 						&:focus {
 							outline: none !important;
 							border: 2px solid $gen-orange;
 						}
 						&::placeholder {
 							color:$res-orange;
+							font-family:"Bebas Neue", cursive;
+							@include font-size(1.1rem);
 						}
 					}
 				}
@@ -75,15 +90,20 @@
 				.btnContact {
 					width: 42%;
 					border: none;
-					border-radius: 1rem;
+					border-radius: 0;
 					padding: 0.5% 2%;
 					background: $gen-orange;
-					@include font-size(1.5rem);
+					@include font-size(2rem);
 					font-weight: 600;
 					color: $bg-body;
 					cursor: pointer;
+					font-family:"Bebas Neue", cursive;
+					letter-spacing: 0.15em;
+					border: 1px solid $gen-orange;
 					&:hover {
-						background: $hov-orange;
+						background: black;
+						color: $gen-orange;
+						border: 1px solid $gen-orange;
 					}
 
 				
@@ -95,8 +115,9 @@
 			margin-bottom: 1%;
 			margin-top: 1%;
 			text-align: center;
-			@include font-size(1.5rem);
+			@include font-size(2rem);
 			color: $gen-orange;
+			font-family:"Bebas Neue", cursive;
 		}
 		
 	}
@@ -136,6 +157,7 @@
 				font-weight: 400;
 				color: $bg-body;
 				cursor: pointer;
+				
 			}
 		}
 		

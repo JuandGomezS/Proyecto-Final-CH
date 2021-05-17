@@ -43,13 +43,13 @@
 	height: 100%;
 	width: 100%;
 	.us-title {
-		@include font-size(1.8rem);
+		@include font-size(3rem);
 		text-transform: uppercase;
 		padding-bottom: 5px;
 	}
 	hr {
 		width: 33%;
-		height: 2px;
+		height: 1px;
 		background: $bg-body;
 		border: none;
 		margin-top: 5px;
@@ -59,9 +59,10 @@
 	.about-us {
 		.who-we-r {
 			.h31 {
-				@include font-size(1.5rem);
+				@include font-size(2rem);
 				margin: auto;
 				padding-bottom: 25px;
+				font-family:"Bebas Neue", cursive;
 			}
 			.p-who-we-r {
 				@include font-size(1.15rem);
@@ -71,14 +72,15 @@
 		}
 		.raven-team {
 			.h32 {
-				@include font-size(1.8rem);
+				@include font-size(2.5rem);
 				margin: auto;
-				padding-bottom: 25px;
+				padding-bottom: 10px;
 				text-transform: uppercase;
+				font-family:"Bebas Neue", cursive;
 			}
 			hr {
 				width: 33%;
-				height: 2px;
+				height: 1px;
 				background: $bg-body;
 				border: none;
 				margin-top: 5px;
@@ -109,10 +111,11 @@
 						}
 					}
 					.name-team {
-						@include font-size(1.3rem);
+						@include font-size(1.5rem);
 						padding-bottom: 10px;
 						text-align: center;
 						width: 75%;
+						font-family:"Bebas Neue", cursive;
 					}
 					.p-team {
 						@include font-size(1.1rem);
