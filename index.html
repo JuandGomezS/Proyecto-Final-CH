@@ -97,25 +97,25 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex flex-row justify-content-center align-items-center">
-          <a href="" class="service1" target="_blank" data-bs-toggle="modal" data-bs-target="#estampados" data-bs-dismiss="modal">
+          <a href="" class="service1" target="_blank" data-bs-toggle="modal" data-bs-target="#estampados" data-bs-dismiss="modal" id="est">
             <div class="serv d-flex justify-content-center align-items-center flex-column">
               <i class="fas fa-spray-can"></i>
               <P>ESTAMPADOS</P>
             </div>            
           </a>
-          <a href="" class="service2" target="_blank" data-bs-toggle="modal" data-bs-target="#foto" data-bs-dismiss="modal">
+          <a href="" class="service2" target="_blank" data-bs-toggle="modal" data-bs-target="#foto" data-bs-dismiss="modal" id="foto">
             <div class="serv d-flex justify-content-center align-items-center flex-column">
               <i class="fas fa-camera-retro"></i>
               <P>FOTOGRAFÍA</P>
             </div>
           </a>
-          <a href="" class="service3" target="_blank" data-bs-toggle="modal" data-bs-target="#video" data-bs-dismiss="modal">
+          <a href="" class="service3" target="_blank" data-bs-toggle="modal" data-bs-target="#video" data-bs-dismiss="modal" id="video">
             <div class="serv d-flex justify-content-center align-items-center flex-column">
               <i class="fas fa-video"></i>
               <P>VIDEO</P>
             </div>
           </a>
-          <a href="" class="service4" target="_blank" data-bs-toggle="modal" data-bs-target="#pub" data-bs-dismiss="modal"> 
+          <a href="" class="service4" target="_blank" data-bs-toggle="modal" data-bs-target="#pub" data-bs-dismiss="modal" id="ads"> 
             <div class="serv d-flex justify-content-center align-items-center flex-column">
               <i class="fas fa-ad"></i>
               <P>PUBLICIDAD</P>
@@ -128,16 +128,40 @@
       </div>
     </div>
   </div>
-  
+
   <div class="modal fade" id="estampados" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel2">PRESUPUESTRAR ESTAMPADOS</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          Hide this modal and show the first with the button below.
+        <div class="modal-body d-flex flex-row justify-content-center align-items-center">
+
+          <a class="estamp"  id="est-shirts"> 
+            <div class="serv d-flex justify-content-center align-items-center flex-column">              
+              <P>CAMISETAS</P>
+            </div>
+          </a>  
+          
+          <a class="estamp"  id="est-cup"> 
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <P>POSILLOS</P>
+            </div>
+          </a>  
+
+          <a class="estamp"  id="est-cap"> 
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <P>GORRAS</P>
+            </div>
+          </a>  
+
+          <a class="estamp"  id="est-dish"> 
+            <div class="serv d-flex justify-content-center align-items-center flex-column">
+              <P>PLATOS</P>
+            </div>
+          </a>  
+          
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
