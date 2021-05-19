@@ -1,0 +1,71 @@
+.modal {
+    font-family: "Bebas Neue", cursive;
+
+    .modal-header {
+        color: $gen-orange;
+        background-color: $bg-body;
+        border: 1px solid $gen-orange;
+        .modal-title {
+            @include font-size(2.2rem);
+        }
+    }
+
+    .modal-body {
+        background-color: $bg-body;
+        border: 1px solid $gen-orange;
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            .serv {
+                width: 6rem;
+                height: 4rem;
+                margin: 1.5rem;
+                border: 1px solid $gen-orange;
+                background-color: $gen-orange;
+                transition: 0.2s;
+                
+                p {
+                    color: $bg-body;
+                    @include font-size(1.3rem);
+                }
+
+                i {
+                    color: $bg-body;
+                    @include font-size(1.5rem);
+                }
+                &:hover {
+                    background-color: $bg-body;
+                    p {
+                        color: $gen-orange;                        
+                    }
+    
+                    i {
+                        color: $gen-orange;                        
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .modal-footer {
+        border-top: none;
+        border: 1px solid $gen-orange;
+        background-color: $bg-body;
+
+        .boton{
+            color: $bg-body;
+            background-color: $gen-orange;
+            transition: 0.2s;
+            border: 1px solid $gen-orange;
+            border-radius: 0;
+            &:hover {
+                color: $gen-orange;
+                background-color: $bg-body;
+            }
+
+        }
+    }
+
+    
+}

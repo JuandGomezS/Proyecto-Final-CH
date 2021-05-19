@@ -59,13 +59,13 @@
 	}
 }
 .btn-menu {
-	>.fa-caret-down {
+	>.fa-bars {
 		display: none;
 	}
 }
 @media only screen and (max-width: 900px) {
 	.btn-menu {
-		>.fa-caret-down {
+		>.fa-bars {
 			display: block;
 			position: absolute;
 			right: 30px;

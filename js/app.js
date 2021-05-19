@@ -65,10 +65,7 @@ class Producto {
   }
 }
 
-/* const camisetas = new Producto("Camisetas","5000","19","0");
-const posillos = new Producto("Posillos","2000","19","0");
-const gorras = new Producto("Gorras","3000","19","0");
-const platos = new Producto("Platos","2000","19","0"); */
+
 
 let preciosProductosEst = [];
 

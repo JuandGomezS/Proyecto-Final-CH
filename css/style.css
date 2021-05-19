@@ -56,7 +56,7 @@ p {
   right: 40px;
   background-color: #25d366;
   color: #FFF;
-  border-radius: 50px;
+  border-radius: 0px;
   text-align: center;
   font-size: 30px;
   box-shadow: 2px 2px 3px #999;
@@ -77,7 +77,7 @@ p {
   background-color: #202020;
   color: #f29209;
   border: 2px solid #f29209;
-  border-radius: 50px;
+  border-radius: 0px;
   text-align: center;
   font-size: 30px;
   /* box-shadow: 2px 2px 3px #999; */
@@ -97,13 +97,13 @@ p {
 @media only screen and (max-width: 900px) {
   .float {
     position: fixed;
-    width: 45px;
-    height: 43px;
+    width: 43px;
+    height: 41px;
     bottom: 25px;
     right: 25px;
     background-color: #25d366;
     color: #FFF;
-    border-radius: 50px;
+    border-radius: 0px;
     text-align: center;
     font-size: 30px;
     box-shadow: 2px 2px 3px #999;
@@ -112,6 +112,22 @@ p {
 
   .my-float {
     margin-top: 0px;
+  }
+
+  .float1 {
+    position: fixed;
+    width: 45px;
+    height: 43px;
+    bottom: 75px;
+    right: 25px;
+    background-color: #202020;
+    color: #f29209;
+    border: 2px solid #f29209;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
   }
 }
 ::-webkit-scrollbar {
@@ -207,12 +223,12 @@ input:-webkit-autofill {
   border-bottom: 1px solid #f29209;
 }
 
-.btn-menu > .fa-caret-down {
+.btn-menu > .fa-bars {
   display: none;
 }
 
 @media only screen and (max-width: 900px) {
-  .btn-menu > .fa-caret-down {
+  .btn-menu > .fa-bars {
     display: block;
     position: absolute;
     right: 30px;
@@ -222,7 +238,7 @@ input:-webkit-autofill {
     transition: 0.5s;
     cursor: pointer;
   }
-  .btn-menu > .fa-caret-down:hover {
+  .btn-menu > .fa-bars:hover {
     color: #c17407;
   }
 
@@ -577,7 +593,7 @@ input:-webkit-autofill {
 }
 #Servicios .services-content hr {
   width: 33%;
-  height: 2px;
+  height: 1px;
   background: #f29209;
   border: none;
   margin-top: 5px;
@@ -1032,7 +1048,7 @@ footer .footerblock .footerblock__info .footerblock__info__icons .social-circle 
   margin: 0 auto 0 auto;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 0%;
   text-align: center;
   width: 50px;
   height: 50px;
@@ -1072,6 +1088,81 @@ footer .copyright .copyright__text {
   footer .footerblock .footerblock__iframe {
     padding: 0rem;
   }
+}
+.modal {
+  font-family: "Bebas Neue", cursive;
+}
+.modal .modal-header {
+  color: #f29209;
+  background-color: black;
+  border: 1px solid #f29209;
+}
+.modal .modal-header .modal-title {
+  font-size: calc(1.345rem + 1.14vw);
+}
+@media (min-width: 1200px) {
+  .modal .modal-header .modal-title {
+    font-size: 2.2rem;
+  }
+}
+.modal .modal-body {
+  background-color: black;
+  border: 1px solid #f29209;
+}
+.modal .modal-body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-body a .serv {
+  width: 6rem;
+  height: 4rem;
+  margin: 1.5rem;
+  border: 1px solid #f29209;
+  background-color: #f29209;
+  transition: 0.2s;
+}
+.modal .modal-body a .serv p {
+  color: black;
+  font-size: calc(1.255rem + 0.06vw);
+}
+@media (min-width: 1200px) {
+  .modal .modal-body a .serv p {
+    font-size: 1.3rem;
+  }
+}
+.modal .modal-body a .serv i {
+  color: black;
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  .modal .modal-body a .serv i {
+    font-size: 1.5rem;
+  }
+}
+.modal .modal-body a .serv:hover {
+  background-color: black;
+}
+.modal .modal-body a .serv:hover p {
+  color: #f29209;
+}
+.modal .modal-body a .serv:hover i {
+  color: #f29209;
+}
+.modal .modal-footer {
+  border-top: none;
+  border: 1px solid #f29209;
+  background-color: black;
+}
+.modal .modal-footer .boton {
+  color: black;
+  background-color: #f29209;
+  transition: 0.2s;
+  border: 1px solid #f29209;
+  border-radius: 0;
+}
+.modal .modal-footer .boton:hover {
+  color: #f29209;
+  background-color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
