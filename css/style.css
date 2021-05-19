@@ -268,7 +268,6 @@ input:-webkit-autofill {
   }
   .menu .list-container ul li {
     width: 90%;
-    border-bottom: 2px solid #6b4209;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1132,11 +1131,11 @@ footer .copyright .copyright__text {
 }
 .modal .modal-body a .serv i {
   color: black;
-  font-size: calc(1.275rem + 0.3vw);
+  font-size: calc(1.305rem + 0.66vw);
 }
 @media (min-width: 1200px) {
   .modal .modal-body a .serv i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
 .modal .modal-body a .serv:hover {
