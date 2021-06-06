@@ -136,35 +136,13 @@
           <h5 class="modal-title" id="exampleModalToggleLabel2">PRESUPUESTRAR ESTAMPADOS</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body d-flex flex-row justify-content-center align-items-center">
+        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
 
-          <a class="estamp"  id="est-shirts"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">              
-              <P>CAMISETAS</P>
-            </div>
-          </a>  
-          
-          <a class="estamp"  id="est-cup"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>POSILLOS</P>
-            </div>
-          </a>  
-
-          <a class="estamp"  id="est-cap"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>GORRAS</P>
-            </div>
-          </a>  
-
-          <a class="estamp"  id="est-dish"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>PLATOS</P>
-            </div>
-          </a>  
+          <div class="card-group cards-estam"></div>
           
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button class="btn btn-primary boton" id="clear" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
           <button class="btn btn-primary boton">CALCULAR</button>
         </div>
       </div>
@@ -178,21 +156,13 @@
           <h5 class="modal-title" id="exampleModalToggleLabel2">FOTOGRAFÍA</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body d-flex flex-row justify-content-center align-items-center">
-          <a id="foto-d"> 
-            <div class="serv d-flex justify-content-center align-items-center">              
-              <P>DIGITAL</P>
-            </div>
-          </a>  
+        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+
+          <div class="cards-pho card-group"></div>
           
-          <a id="foto-i"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>IMPRESA</P>
-            </div>
-          </a>  
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button id="clear1" class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
           <button class="btn btn-primary boton">CALCULAR</button>
         </div>
       </div>
@@ -209,26 +179,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex flex-row justify-content-center align-items-center">
-          <a id="video-gr"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>GRABACIÓN</P>
-            </div>
-          </a> 
-
-          <a id="video-ed"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>EDICIÓN</P>
-            </div>
-          </a> 
-
-          <a id="video-ge"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>COMBO</P>
-            </div>
-          </a> 
+          <div class="cards-vid card-group"></div> 
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button id="clear2" class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
           <button class="btn btn-primary boton">CALCULAR</button>
         </div>
       </div>
@@ -243,20 +197,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex flex-row justify-content-center align-items-center">
-          <a id="pub-b"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">              
-              <P>BRANDING</P>
-            </div>
-          </a>  
           
-          <a id="pub-sn"> 
-            <div class="serv d-flex justify-content-center align-items-center flex-column">
-              <P>REDES</P>
-            </div>
-          </a>  
+          <div class="cards-ad card-group"></div>
+           
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
+          <button id="clear3" class="btn btn-primary boton" data-bs-target="#cotModal" data-bs-toggle="modal" data-bs-dismiss="modal">VOLVER</button>
           <button class="btn btn-primary boton">CALCULAR</button>
         </div>
       </div>
@@ -648,7 +594,8 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>AOS.init()</script>
-  <script src="js/app.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
