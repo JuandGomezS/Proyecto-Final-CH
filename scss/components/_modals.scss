@@ -63,6 +63,9 @@
                 color: $gen-orange;
                 background-color: $bg-body;
             }
+            &:focus {
+                box-shadow: 0 0 0 0.25rem darken($gen-orange, 10%);
+            }
 
         }
     }

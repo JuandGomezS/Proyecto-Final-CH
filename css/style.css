@@ -1163,5 +1163,8 @@ footer .copyright .copyright__text {
   color: #f29209;
   background-color: black;
 }
+.modal .modal-footer .boton:focus {
+  box-shadow: 0 0 0 0.25rem #c17407;
+}
 
 /*# sourceMappingURL=style.css.map */
