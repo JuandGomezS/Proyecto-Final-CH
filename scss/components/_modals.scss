@@ -43,9 +43,81 @@
                         color: $gen-orange;                        
                     }
                 }
-            }
-            
+            }            
         }
+        .card{
+            border: 2px solid $gen-orange;
+            margin: 1rem;
+            max-width:20rem;
+            .card-body{
+                background-color: $bg-body;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .card-title{
+                    color: $gen-orange;
+                    @include font-size(2rem);
+                    border-bottom: 1px solid $gen-orange;
+                }
+                .card-text{
+                    font-family: "Montserrat", sans-serif !important;
+                    color: $gen-orange;
+                    @include font-size(1.1rem);
+                    text-align: center;
+                }
+                a {
+                    color: $bg-body;
+                    background-color: $gen-orange;
+                    transition: 0.2s;
+                    border: 1px solid $gen-orange;
+                    border-radius: 0;
+                    margin-top: 0.8rem;
+                    &:hover {
+                        color: $gen-orange;
+                        background-color: $bg-body;
+                    }
+                    &:focus {
+                        box-shadow: 0 0 0 0.25rem darken($gen-orange, 10%);
+                    }
+                }                
+            }
+        }  
+        .contenedor {
+            width: 90%;
+            margin-top:1rem;
+            label{
+                color: $gen-orange;
+                @include font-size(2rem);
+            }
+            input {
+                background-color: $bg-body;
+                color: $gen-orange !important;
+                border: 1px solid $hov-orange;
+                font-family:"Bebas Neue", cursive;
+                @include font-size(1.8rem);
+                padding-bottom: 0;
+                border-radius: 0;
+                &:focus {
+                    outline: none !important;
+                    border: 2px solid $gen-orange;
+                    background-color: black;
+                }
+                
+                &::placeholder {
+                    color:$res-orange;
+                    @include font-size(1.1rem);
+                    font-family:"Bebas Neue", cursive;
+                }
+            }
+            .p{
+                color: $gen-orange;
+                @include font-size(2rem);
+                text-align: center;
+            }
+        }      
+            
+        
     }
 
     .modal-footer {
@@ -71,4 +143,11 @@
     }
 
     
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
 }

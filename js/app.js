@@ -2,6 +2,7 @@
 let btnMenu = document.querySelector('.btn-menu');
 let menu = document.querySelector('.list-container');
 var activador = true;
+var counter = 0;
 
 btnMenu.addEventListener('click', (event) => {
 	if (activador) {
@@ -139,7 +140,7 @@ const videoGr = new Producto(
 	'0',
 	'../img/grabvid.jpg',
 	'Grabación de video digital en FHD con equipos de alta tecnología.',
-  'video-gr'
+	'video-gr'
 );
 const videoEd = new Producto(
 	'vid',
@@ -149,7 +150,7 @@ const videoEd = new Producto(
 	'0',
 	'../img/edivid.jpg',
 	'Edición de video en software de alta fidelidad.',
-  'video-ed'
+	'video-ed'
 );
 const videoGe = new Producto(
 	'vid',
@@ -164,24 +165,25 @@ const videoGe = new Producto(
 
 //Publicidad
 const publicidadB = new Producto(
-  'ad',
-  'Branding',
-  '50000',
-  '19',
-  '0',
-  '../img/branding.jpg',
-  'Definición y contrrucción de marca según tus necesidades.',
-  'pub-b'
+	'ad',
+	'Branding',
+	'50000',
+	'19',
+	'0',
+	'../img/branding.jpg',
+	'Definición y contrrucción de marca según tus necesidades.',
+	'pub-b'
 );
 
-const publicidadSN = new Producto('ad',
-  'Redes Sociales',
-  '100000',
-  '19',
-  '0',
-  '../img/socialn.jpg',
-  'Diseño grafico para campañas en redes sociales.',
-  'pub-sn'
+const publicidadSN = new Producto(
+	'ad',
+	'Redes Sociales',
+	'100000',
+	'19',
+	'0',
+	'../img/socialn.jpg',
+	'Diseño grafico para campañas en redes sociales.',
+	'pub-sn'
 );
 
 Productos.push(
@@ -197,69 +199,155 @@ Productos.push(
 	publicidadSN
 );
 
-const filtrar = (array, type) => {
-	array.filter((elemento) => elemento.tipo === type);
-};
+const printResult = (quantity, precio, container) => {
+	let value;
+	const p = document.createElement('p');
 
-const validate = (quantity, precio) => {
 	if (isNaN(quantity)) {
-		alert(`El costo es de: $ ${0}`);
+		value = 0;
 	} else {
-		alert(`El costo es de: $ ${cantidad * precio}`);
+		value = quantity * precio;
 	}
+	p.textContent = `El costo es de: $ ${value}`;
+	p.className = 'p';
+	container.appendChild(p);
 };
 
 //FUNCIONALIDAD PARA ESTAMPADOS
 document.getElementById('est').onclick = () => {
-	console.table(Productos);
 	let productosEst = Productos.filter((elemento) => elemento.tipo === 'EST');
-	console.table(productosEst);
+	let inputEsta = document.getElementById('input-est');
 
 	for (const array of productosEst) {
 		$('.cards-estam').append(`
-    <div class="card" id="cardsest" ">
-      <img src="${array.route}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${array.nombre}</h5>
-        <p class="card-text">${array.description}</p>
-        <a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
-      </div>
-    </div> `);
+    	<div class="card" id="cardsest" >
+      		<img src="${array.route}" class="card-img-top" alt="...">
+      		<div class="card-body">
+        		<h5 class="card-title">${array.nombre}</h5>
+        		<p class="card-text">${array.description}</p>
+        		<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
+      	</div>
+    	</div> `);
 	}
 	document.getElementById('est-shirts').onclick = () => {
-		let cantidad = parseInt(prompt(`¿Cuántas ${camisetas.nombre.toLowerCase()} quieres estampar?`));
-		camisetas.sumaIva();
-		validate(cantidad, camisetas.precio);
-		camisetas.restablecerPrecio();
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${camisetas.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.placeholder = `Ingresa la cantidad de ${camisetas.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputEsta.appendChild(label);
+		inputEsta.appendChild(input);
+
+		
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			camisetas.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, camisetas.precio, inputEsta);
+			camisetas.restablecerPrecio();
+		});
 	};
+
 	document.getElementById('est-cup').onclick = () => {
-		let cantidad = parseInt(prompt(`¿Cuántas ${posillos.nombre.toLowerCase()} quieres estampar?`));
-		posillos.sumaIva();
-		validate(cantidad, posillos.precio);
-		posillos.restablecerPrecio();
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${posillos.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${posillos.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputEsta.appendChild(label);
+		inputEsta.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			posillos.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, posillos.precio, inputEsta);
+			posillos.restablecerPrecio();
+		});
 	};
 
 	document.getElementById('est-cap').onclick = () => {
-		let cantidad = parseInt(prompt(`¿Cuántas ${gorras.nombre.toLowerCase()} quieres estampar?`));
-		gorras.sumaIva();
-		validate(cantidad, gorras.precio);
-		gorras.restablecerPrecio();
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${gorras.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${gorras.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputEsta.appendChild(label);
+		inputEsta.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			gorras.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, gorras.precio, inputEsta);
+			gorras.restablecerPrecio();
+		});
 	};
 
 	document.getElementById('clear').onclick = () => {
 		$('.card').remove();
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
 	};
 };
 
 // FUNCIONALIDAD PARA FOTOGRAFÍA
 document.getElementById('foto').onclick = () => {
-	console.clear();
-	console.table(Productos);
 	let productosPh = Productos.filter((elemento) => elemento.tipo === 'PHO');
-	console.table(productosPh);
+	let inputFoto = document.getElementById('input-foto');
+
 	for (const array of productosPh) {
 		$('.cards-pho').append(`
-    <div class="card cardph" id="cardsest" ">
+    <div class="card cardph" id="cardsfoto" ">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -270,34 +358,91 @@ document.getElementById('foto').onclick = () => {
 	}
 
 	document.getElementById('foto-d').onclick = () => {
-		let cantidad = parseInt(prompt(`¿Cuántas ${fotografiaD.nombre.toLowerCase()} deseas?`));
-		fotografiaD.sumaIva();
-		validate(cantidad, fotografiaD.precio);
-		fotografiaD.restablecerPrecio();
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${fotografiaD.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${fotografiaD.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputFoto.appendChild(label);
+		inputFoto.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			fotografiaD.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, fotografiaD.precio, inputFoto);
+			fotografiaD.restablecerPrecio();
+		});
 	};
 
 	document.getElementById('foto-i').onclick = () => {
-		let cantidad = parseInt(prompt(`¿Cuántas ${fotografiaI.nombre.toLowerCase()} deseas?`));
-		fotografiaI.sumaIva();
-		validate(cantidad, fotografiaI.precio);
-		fotografiaI.restablecerPrecio();
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${fotografiaI.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${fotografiaI.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputFoto.appendChild(label);
+		inputFoto.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			fotografiaI.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, fotografiaI.precio, inputFoto);
+			fotografiaI.restablecerPrecio();
+		});
 	};
 
 	document.getElementById('clear1').onclick = () => {
 		$('.cardph').remove();
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
 	};
 };
 
 // FUNCIONALIDAD PARA VIDEO
 document.getElementById('video').onclick = () => {
 	console.clear();
-	
-	let productosVi = Productos.filter((elemento) => elemento.tipo === 'VID');
-	
 
-  for (const array of productosVi) {
+	let productosVi = Productos.filter((elemento) => elemento.tipo === 'VID');
+	let inputVid = document.getElementById('input-vid');
+
+	for (const array of productosVi) {
 		$('.cards-vid').append(`
-    <div class="card cardvi" id="cardsest" ">
+    <div class="card cardvi" id="cardsvid ">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -307,45 +452,124 @@ document.getElementById('video').onclick = () => {
     </div> `);
 	}
 
-  document.getElementById('video-gr').onclick = () => {
-    let cantidad = parseInt(prompt(`¿Cuántos minutos de ${videoGr.nombre.toLowerCase()} en grabación deseas?`));
-    videoGr.sumaIva();
-    validate(cantidad, videoGr.precio);
-    videoGr.restablecerPrecio();
-  };
-  
-  document.getElementById('video-ed').onclick = () => {
-    let cantidad = parseInt(prompt(`¿Cuántos minutos de ${videoEd.nombre.toLowerCase()} en edición deseas?`));
-    videoEd.sumaIva();
-    validate(cantidad, videoEd.precio);
-    videoEd.restablecerPrecio();
-  };
-  
-  document.getElementById('video-ge').onclick = () => {
-    let cantidad = parseInt(
-      prompt(`¿Cuántos minutos de ${videoGe.nombre.toLowerCase()} en edición y grabación deseas?`)
-    );
-    videoGe.sumaIva();
-    validate(cantidad, videoGe.precio);
-    videoGe.restablecerPrecio();
-  };
+	document.getElementById('video-gr').onclick = () => {
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${videoGr.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${videoGr.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputVid.appendChild(label);
+		inputVid.appendChild(input);
 
-  document.getElementById('clear2').onclick = () => {
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			videoGr.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, videoGr.precio, inputVid);
+			videoGr.restablecerPrecio();
+		});
+	};
+
+	document.getElementById('video-ed').onclick = () => {
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${videoEd.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${videoGr.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputVid.appendChild(label);
+		inputVid.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			videoEd.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, videoEd.precio, inputVid);
+			videoEd.restablecerPrecio();
+		});
+	};
+
+	document.getElementById('video-ge').onclick = () => {
+		$('.iest').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${videoGe.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${videoGe.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputVid.appendChild(label);
+		inputVid.appendChild(input);
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			videoGe.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, videoGe.precio, inputVid);
+			videoGe.restablecerPrecio();
+		});
+	};
+
+	document.getElementById('clear2').onclick = () => {
 		$('.cardvi').remove();
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
 	};
 };
-
-
 
 // FUNCIONALIDAD PARA PUBLICIDAD
 document.getElementById('ads').onclick = () => {
-	console.clear();
-	console.table(Productos);
 	let productosAd = Productos.filter((elemento) => elemento.tipo === 'AD');
-	console.table(productosAd);
-  for (const array of productosAd) {
+	let inputAd = document.getElementById('input-ad');
+
+	for (const array of productosAd) {
 		$('.cards-ad').append(`
-    <div class="card cardad" id="cardsest" ">
+    <div class="card cardad" id="cardsad" ">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -355,24 +579,90 @@ document.getElementById('ads').onclick = () => {
     </div> `);
 	}
 
-  document.getElementById('pub-b').onclick = () => {
-    let cantidad = parseInt(prompt(`¿Cuántos servicios de ${publicidadB.nombre.toLowerCase()} deseas?`));
-    publicidadB.sumaIva();
-    validate(cantidad, publicidadB.precio);
-    publicidadB.restablecerPrecio();
-  };
-  
-  document.getElementById('pub-sn').onclick = () => {
-    let cantidad = parseInt(prompt(`¿Cuántos servicios de publicidad en ${publicidadSN.nombre.toLowerCase()} deseas?`));
-    console.log(cantidad);
-    publicidadSN.sumaIva();
-    validate(cantidad, publicidadSN.precio);
-    publicidadSN.restablecerPrecio();
-  };
+	document.getElementById('pub-b').onclick = () => {
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${publicidadB.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${publicidadB.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputAd.appendChild(label);
+		inputAd.appendChild(input);
 
-  document.getElementById('clear3').onclick = () => {
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			publicidadB.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, publicidadB.precio, inputAd);
+			publicidadB.restablecerPrecio();
+		});
+	};
+
+	document.getElementById('pub-sn').onclick = () => {
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
+		counter += 1;
+		if (counter >= 1) {
+			$('.inp').remove();
+			$('.lab').remove();
+			$('.p').remove();
+		}
+		const input = document.createElement('input');
+		const label = document.createElement('label');
+		label.for = 'shirtsq';
+		label.textContent = `Cantidad de ${publicidadSN.nombre}:`;
+		label.className = 'lab';
+		input.className = 'inp';
+		input.min = 1;
+		input.placeholder = `Ingresa la cantidad de ${publicidadSN.nombre} que deseas.`;
+		input.type = 'number';
+		input.name = 'shirtsq';
+		inputAd.appendChild(label);
+		inputAd.appendChild(input);
+
+		input.addEventListener("keydown", function (e) {
+			if (e.keyCode === 13) {  
+				$('.p').remove();
+				publicidadSN.sumaIva();
+				if (input.value<0){
+					input.value=0;
+				}
+				printResult(input.value, publicidadSN.precio, inputAd);
+				publicidadSN.restablecerPrecio();
+			}
+		});
+
+		input.addEventListener('focusout', () => {
+			$('.p').remove();
+			publicidadSN.sumaIva();
+			if (input.value<0){
+				input.value=0;
+			}
+			printResult(input.value, publicidadSN.precio, inputAd);
+			publicidadSN.restablecerPrecio();
+		});
+	};
+
+	document.getElementById('clear3').onclick = () => {
 		$('.cardad').remove();
+		$('.inp').remove();
+		$('.lab').remove();
+		$('.p').remove();
 	};
 };
-
-
