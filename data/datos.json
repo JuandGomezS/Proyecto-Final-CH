@@ -1,0 +1,102 @@
+{
+  "camisetas": {
+    "tipo": "est",
+    "nombre": "Camisetas",
+    "precio": "5000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/estpre.jpg",
+    "description": "Camisetas en algodón estampadas con alta calidad.",
+    "id": "est-shirts"
+  },
+  "posillos": {
+    "tipo": "est",
+    "nombre": "Posillos",
+    "precio": "2000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/est4.jpg",
+    "description": "Posillos en cerámica personalizables a tu gusto.",
+    "id": "est-cup"
+  },
+  "gorras": {
+    "tipo": "est",
+    "nombre": "Gorras",
+    "precio": "3000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/estprego.jpg",
+    "description": "Gorras o cachuchas personalizables a tu gusto.",
+    "id": "est-cap"
+  },
+  "fotografiaD": {
+    "tipo": "pho",
+    "nombre": "Fotografía Digital",
+    "precio": "5000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/fotopre.jpg",
+    "description": "Fotografía en formato digital, se entrega en usb o cloud.",
+    "id": "foto-d"
+  },
+  "fotografiaI": {
+    "tipo": "pho",
+    "nombre": "Fotografía Impresa",
+    "precio": "7000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/fotopreim.jpg",
+    "description": "Fotografía impresa en papel fotográfico de alta calidad.",
+    "id": "foto-i"
+  },
+  "videoGr": {
+    "tipo": "vid",
+    "nombre": "Grabación de video digital",
+    "precio": "25000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/grabvid.jpg",
+    "description": "Grabación de video digital en FHD con equipos de alta tecnología.",
+    "id": "video-gr"
+  },
+  "videoEd": {
+    "tipo": "vid",
+    "nombre": "Edición de video digital",
+    "precio": "30000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/edivid.jpg",
+    "description": "Edición de video en software de alta fidelidad.",
+    "id": "video-ed"
+  },
+  "videoGe": {
+    "tipo": "vid",
+    "nombre": "Grabación y edición",
+    "precio": "50000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/combo.jpg",
+    "description": "Combo edición y grabación, se entrega en usb o cloud.",
+    "id": "video-ge"
+  },
+  "publicidadB": {
+    "tipo": "ad",
+    "nombre": "Branding",
+    "precio": "50000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/branding.jpg",
+    "description": "Definición y contrrucción de marca según tus necesidades.",
+    "id": "pub-b"
+  },
+  "publicidadSN": {
+    "tipo": "ad",
+    "nombre": "Redes sociales",
+    "precio": "100000",
+    "iva": "19",
+    "descuento": "0",
+    "ruta": "../img/socialn.jpg",
+    "description": "Diseño grafico para campañas en redes sociales.",
+    "id": "pub-sn"
+  }
+}
