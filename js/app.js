@@ -33,6 +33,8 @@ enlaces.forEach((element) => {
 });
 
 window.onload = () => {
+
+	
 	
 	const hash = window.location.hash;
 	if (hash === '') {
@@ -244,6 +246,8 @@ const printResult = (quantity, precio, container) => {
 //Evento on click para productos de estampados, en el cual se ejecuta el DOM creando cards que toman sus valores al recorrer un array que surge
 //del filtrado de los elementos de tipo est
 document.getElementById('est').onclick = () => {
+	//Agreguemos <h3> con jQuery ocultos con  style="display: none;"
+	
 	//Filtro de objetos de tipo est
 	let productosEst = Productos.filter((elemento) => elemento.tipo === 'EST');
 
@@ -253,7 +257,7 @@ document.getElementById('est').onclick = () => {
 	//generación de cards al recorrer el array productosEst
 	for (const array of productosEst) {
 		$('.cards-estam').append(`
-    	<div class="card" id="cardsest" >
+    	<div class="card" id="cardsest" style="display:none" >
       		<img src="${array.route}" class="card-img-top" alt="...">
       		<div class="card-body">
         		<h5 class="card-title">${array.nombre}</h5>
@@ -261,7 +265,9 @@ document.getElementById('est').onclick = () => {
         		<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
       	</div>
     	</div> `);
+		
 	}
+	$('.card').fadeIn(1000).animate({top:'1rem'},).animate({top:'0rem'});
 
 	//Evento onclick que se ejecuta al oprimir el botón presupuestar
 	document.getElementById('est-shirts').onclick = () => {
@@ -270,7 +276,6 @@ document.getElementById('est').onclick = () => {
 		$('.iest').remove();
 		$('.lab').remove();
 		$('.p').remove();
-
 		//Se implementa un contador que permite saber si se oprime más de una vez el botón presupuestar para no imprimir más de una vez el input y el label
 		counter += 1;
 		if (counter >= 1) {
@@ -415,7 +420,7 @@ document.getElementById('foto').onclick = () => {
 
 	for (const array of productosPh) {
 		$('.cards-pho').append(`
-    <div class="card cardph" id="cardsfoto" ">
+    <div class="card cardph" id="cardsfoto" style= "display:none;">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -424,6 +429,10 @@ document.getElementById('foto').onclick = () => {
       </div>
     </div> `);
 	}
+	$('.card').fadeIn(1000).animate({top:'1rem'},).animate({top:'0rem'});
+	
+	
+
 
 	document.getElementById('foto-d').onclick = () => {
 		$('.iest').remove();
@@ -524,7 +533,7 @@ document.getElementById('video').onclick = () => {
 
 	for (const array of productosVi) {
 		$('.cards-vid').append(`
-    <div class="card cardvi" id="cardsvid ">
+    <div class="card cardvi" id="cardsvid" style="display:none;">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -533,6 +542,7 @@ document.getElementById('video').onclick = () => {
       </div>
     </div> `);
 	}
+	$('.card').fadeIn(1000).animate({top:'1rem'},).animate({top:'0rem'});
 
 	document.getElementById('video-gr').onclick = () => {
 		$('.iest').remove();
@@ -669,7 +679,7 @@ document.getElementById('ads').onclick = () => {
 
 	for (const array of productosAd) {
 		$('.cards-ad').append(`
-    <div class="card cardad" id="cardsad" ">
+    <div class="card cardad" id="cardsad" style="display:none;">
       <img src="${array.route}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${array.nombre}</h5>
@@ -678,6 +688,7 @@ document.getElementById('ads').onclick = () => {
       </div>
     </div> `);
 	}
+	$('.card').fadeIn(1000).animate({top:'1rem'},).animate({top:'0rem'});
 
 	document.getElementById('pub-b').onclick = () => {
 		$('.inp').remove();
