@@ -2,8 +2,7 @@
 let btnMenu = document.querySelector('.btn-menu');
 let menu = document.querySelector('.list-container');
 var activador = true;
-let counter = 0;
-
+var counter = 0;
 
 btnMenu.addEventListener('click', (event) => {
 	if (activador) {
@@ -33,6 +32,31 @@ enlaces.forEach((element) => {
 	});
 });
 
+window.onload = async () => {
+	const hash = window.location.hash;
+	if (hash === '') {
+		setLink(enlaces[0]);
+	} else {
+		enlaces.forEach((enlace) => {
+			const link = enlace.href;
+			if (link.substring(link.lastIndexOf('#'), link.length) == hash) {
+				setLink(enlace);
+			}
+		});
+	}
+
+	var array = [];
+
+	await fetch('../data/datos.json')
+		.then((response) => response.json())
+		.then((data) => {
+			var arreglo = data;
+			const array1 = Object.values(arreglo);
+			array = array1;
+		})
+		.catch((err) => console.error(err));
+	console.log(array);
+
 	//Clase para construir los objetos
 	class Producto {
 		constructor(tipo, nombre, precio, iva, descuento, route, description, id) {
@@ -59,159 +83,118 @@ enlaces.forEach((element) => {
 		restablecerPrecio() {
 			this.precio = this.price;
 		}
-	};
-
-window.onload = async () => {
-	let array = [];
-	const hash = window.location.hash;
-	if (hash === '') {
-		setLink(enlaces[0]);
-	} else {
-		enlaces.forEach((enlace) => {
-			const link = enlace.href;
-			if (link.substring(link.lastIndexOf('#'), link.length) == hash) {
-				setLink(enlace);
-			}
-		});
 	}
-	await $.getJSON('../data/datos.json', (response, estado) => {
-		if (estado === 'success') {
-			let json = response;
-			let array1 = Object.values(json);
-			array = array1;
-		}
-	});
-	logica(array);
-};
 
-function logica(array) {
 	//Array que contendrá a los productos
 	let Productos = [];
 
 	//Creamos objetos de tipo producto según tipo.
 	//Productos de estampados
-	let elemento = array.shift();
-
 	const camisetas = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[0].tipo,
+		array[0].nombre,
+		array[0].precio,
+		array[0].iva,
+		array[0].descuento,
+		array[0].ruta,
+		array[0].description,
+		array[0].id
 	);
-
-	elemento=array.shift();
 	const posillos = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[1].tipo,
+		array[1].nombre,
+		array[1].precio,
+		array[1].iva,
+		array[1].descuento,
+		array[1].ruta,
+		array[1].description,
+		array[1].id
 	);
-
-	elemento= array.shift();
 	const gorras = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[2].tipo,
+		array[2].nombre,
+		array[2].precio,
+		array[2].iva,
+		array[2].descuento,
+		array[2].ruta,
+		array[2].description,
+		array[2].id
 	);
 
-	elemento= array.shift();
 	//productos de fotografía
 	const fotografiaD = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[3].tipo,
+		array[3].nombre,
+		array[3].precio,
+		array[3].iva,
+		array[3].descuento,
+		array[3].ruta,
+		array[3].description,
+		array[3].id
 	);
-
-	elemento= array.shift();
 	const fotografiaI = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[4].tipo,
+		array[4].nombre,
+		array[4].precio,
+		array[4].iva,
+		array[4].descuento,
+		array[4].ruta,
+		array[4].description,
+		array[4].id
 	);
 
-	elemento= array.shift();
 	//productos de video
 	const videoGr = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[5].tipo,
+		array[5].nombre,
+		array[5].precio,
+		array[5].iva,
+		array[5].descuento,
+		array[5].ruta,
+		array[5].description,
+		array[5].id
 	);
-
-	elemento= array.shift();
 	const videoEd = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[6].tipo,
+		array[6].nombre,
+		array[6].precio,
+		array[6].iva,
+		array[6].descuento,
+		array[6].ruta,
+		array[6].description,
+		array[6].id
 	);
-
-	elemento= array.shift();
 	const videoGe = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[7].tipo,
+		array[7].nombre,
+		array[7].precio,
+		array[7].iva,
+		array[7].descuento,
+		array[7].ruta,
+		array[7].description,
+		array[7].id
 	);
 
 	//Productos de Publicidad
-	elemento= array.shift();
 	const publicidadB = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[8].tipo,
+		array[8].nombre,
+		array[8].precio,
+		array[8].iva,
+		array[8].descuento,
+		array[8].ruta,
+		array[8].description,
+		array[8].id
 	);
-
-	elemento= array.shift();
 	const publicidadSN = new Producto(
-		elemento.tipo,
-		elemento.nombre,
-		elemento.precio,
-		elemento.iva,
-		elemento.descuento,
-		elemento.ruta,
-		elemento.description,
-		elemento.id
+		array[9].tipo,
+		array[9].nombre,
+		array[9].precio,
+		array[9].iva,
+		array[9].descuento,
+		array[9].ruta,
+		array[9].description,
+		array[9].id
 	);
 
 	//Push de los objetos producto al array Productos
@@ -261,14 +244,14 @@ function logica(array) {
 		//generación de cards al recorrer el array productosEst
 		for (const array of productosEst) {
 			$('.cards-estam').append(`
-		<div class="card" id="cardsest" style="display:none" >
-			<img src="${array.route}" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-title">${array.nombre}</h5>
-				<p class="card-text">${array.description}</p>
-				<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
-		</div>
-		</div> `);
+    	<div class="card" id="cardsest" style="display:none" >
+      		<img src="${array.route}" class="card-img-top" alt="...">
+      		<div class="card-body">
+        		<h5 class="card-title">${array.nombre}</h5>
+        		<p class="card-text">${array.description}</p>
+        		<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
+      	</div>
+    	</div> `);
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
@@ -422,15 +405,17 @@ function logica(array) {
 
 		for (const array of productosPh) {
 			$('.cards-pho').append(`
-		<div class="card cardph" id="cardsfoto" style= "display:none;">
-		<img src="${array.route}" class="card-img-top" alt="...">
-		<div class="card-body">
-			<h5 class="card-title">${array.nombre}</h5>
-			<p class="card-text">${array.description}</p>
-			<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
-		</div>
-		</div> `);
+    <div class="card cardph" id="cardsfoto" style= "display:none;">
+      <img src="${array.route}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${array.nombre}</h5>
+        <p class="card-text">${array.description}</p>
+        <a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
+      </div>
+    </div> `);
 		}
+
+		//Animaciones con Jquery
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
 		document.getElementById('foto-d').onclick = () => {
@@ -532,14 +517,14 @@ function logica(array) {
 
 		for (const array of productosVi) {
 			$('.cards-vid').append(`
-		<div class="card cardvi" id="cardsvid" style="display:none;">
-		<img src="${array.route}" class="card-img-top" alt="...">
-		<div class="card-body">
-			<h5 class="card-title">${array.nombre}</h5>
-			<p class="card-text">${array.description}</p>
-			<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
-		</div>
-		</div> `);
+    <div class="card cardvi" id="cardsvid" style="display:none;">
+      <img src="${array.route}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${array.nombre}</h5>
+        <p class="card-text">${array.description}</p>
+        <a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
+      </div>
+    </div> `);
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
@@ -678,14 +663,14 @@ function logica(array) {
 
 		for (const array of productosAd) {
 			$('.cards-ad').append(`
-		<div class="card cardad" id="cardsad" style="display:none;">
-		<img src="${array.route}" class="card-img-top" alt="...">
-		<div class="card-body">
-			<h5 class="card-title">${array.nombre}</h5>
-			<p class="card-text">${array.description}</p>
-			<a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
-		</div>
-		</div> `);
+    <div class="card cardad" id="cardsad" style="display:none;">
+      <img src="${array.route}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${array.nombre}</h5>
+        <p class="card-text">${array.description}</p>
+        <a href="#" id="${array.id}"class="btn btn-primary">PRESUPUESTAR</a>
+      </div>
+    </div> `);
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
@@ -779,4 +764,5 @@ function logica(array) {
 			console.log('si funciona');
 		});
 	};
-}
+};
+
