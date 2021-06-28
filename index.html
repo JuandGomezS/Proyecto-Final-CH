@@ -64,6 +64,12 @@
     <i class="fas fa-search-dollar my-float"></i>
   </a>
 
+    <!-- BOTON Historial -->
+
+    <a href="" class="float2" target="_blank" data-bs-toggle="modal" data-bs-target="#recordModal" id="recordBtn">
+      <i class="fas fa-history"></i>
+    </a>
+
   <!--HEADER-->
   <header id="header">
     <nav class="menu d-flex justify-content-between align-items-center fixed-top">
@@ -88,7 +94,8 @@
     </nav>
   </header>
 
-  <!-- Modal -->
+
+  <!-- Modals -->
   <div class="modal fade" id="cotModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -96,7 +103,7 @@
           <h5 class="modal-title " id="exampleModalToggleLabel">PRESUPUESTOS</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body d-flex flex-row justify-content-center align-items-center">
+        <div class="modal-body d-flex flex-row justify-content-center align-items-center" id="menumodal">
           <a href="" class="service1" target="_blank" data-bs-toggle="modal" data-bs-target="#estampados1" data-bs-dismiss="modal" id="est">
             <div class="serv d-flex justify-content-center align-items-center flex-column">
               <i class="fas fa-spray-can"></i>
@@ -123,13 +130,31 @@
           </a>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary boton" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary boton" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="estampados1" aria-hidden="true" tabindex="-1">
+  <div class="modal fade" id="recordModal" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">HISTORIAL</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+          <div class="card-group cards-record"></div>
+          <div class="total"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="clearRecord" class="btn btn-secondary boton" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="estampados1" aria-hidden="true" tabindex="-1" data-class="responsive">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -150,7 +175,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="foto1" aria-hidden="true" tabindex="-1">
+  <div class="modal fade" id="foto1" aria-hidden="true" tabindex="-1" data-class="responsive" >
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -170,9 +195,7 @@
     </div>
   </div>
 
-
-
-  <div class="modal fade" id="video1" aria-hidden="true" tabindex="-1">
+  <div class="modal fade" id="video1" aria-hidden="true" tabindex="-1" data-class="responsive">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -190,7 +213,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="pub1" aria-hidden="true" tabindex="-1">
+  <div class="modal fade" id="pub1" aria-hidden="true" tabindex="-1" data-class="responsive">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -596,7 +619,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>AOS.init()</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.min.js"></script>
   
 </body>
 

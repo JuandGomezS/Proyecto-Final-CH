@@ -90,6 +90,43 @@ p {
   border: 2px solid black;
 }
 
+.total_price {
+  text-align: center;
+  color: #f29209;
+  font-family: "Bebas Neue", cursive;
+  font-size: calc(1.375rem + 1.5vw);
+  width: 100vh;
+}
+@media (min-width: 1200px) {
+  .total_price {
+    font-size: 2.5rem;
+  }
+}
+
+.float2 {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 180px;
+  right: 40px;
+  background-color: #202020;
+  color: #f29209;
+  border: 2px solid #f29209;
+  border-radius: 0px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+}
+.float2:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #f29209;
+  border: 2px solid black;
+}
+.float2 i {
+  margin-top: 0.8rem;
+}
+
 .my-float {
   margin-top: 14px;
 }
@@ -126,8 +163,25 @@ p {
     border-radius: 0px;
     text-align: center;
     font-size: 30px;
-    /* box-shadow: 2px 2px 3px #999; */
     z-index: 100;
+  }
+
+  .float2 {
+    position: fixed;
+    width: 45px;
+    height: 43px;
+    bottom: 125px;
+    right: 25px;
+    background-color: #202020;
+    color: #f29209;
+    border: 2px solid #f29209;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+  }
+  .float2 i {
+    margin-top: 0rem;
   }
 }
 ::-webkit-scrollbar {
@@ -1174,6 +1228,28 @@ footer .copyright .copyright__text {
   color: #f29209;
   font-size: 1.1rem;
   text-align: center;
+}
+.modal .modal-body .card .card-body .card-price {
+  font-family: "Bebas Neue", cursive;
+  color: #f29209;
+  font-size: calc(1.275rem + 0.3vw);
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .modal .modal-body .card .card-body .card-price {
+    font-size: 1.5rem;
+  }
+}
+.modal .modal-body .card .card-body .card-quantity {
+  font-family: "Bebas Neue", cursive;
+  color: #f29209;
+  font-size: calc(1.275rem + 0.3vw);
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .modal .modal-body .card .card-body .card-quantity {
+    font-size: 1.5rem;
+  }
 }
 .modal .modal-body .card .card-body a {
   color: black;

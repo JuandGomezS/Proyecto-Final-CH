@@ -49,23 +49,41 @@
             border: 2px solid $gen-orange;
             margin: 1rem;
             max-width:20rem;
+            
             .card-body{
                 background-color: $bg-body;
                 display:flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+
                 .card-title{
                     color: $gen-orange;
                     @include font-size(2rem);
                     border-bottom: 1px solid $gen-orange;
                 }
+
                 .card-text{
                     font-family: "Montserrat", sans-serif !important;
                     color: $gen-orange;
                     @include font-size(1.1rem);
                     text-align: center;
                 }
+
+                .card-price{
+                    font-family: "Bebas Neue", cursive;
+                    color: $gen-orange;
+                    @include font-size(1.5rem);
+                    text-align: center;
+                }
+
+                .card-quantity{
+                    font-family: "Bebas Neue", cursive;
+                    color: $gen-orange;
+                    @include font-size(1.5rem);
+                    text-align: center;
+                }
+
                 a {
                     color: $bg-body;
                     background-color: $gen-orange;

@@ -1,9 +1,13 @@
 // Navegation Menu
 let btnMenu = document.querySelector('.btn-menu');
 let menu = document.querySelector('.list-container');
+let recBtn = document.getElementById('recordBtn');
 var activador = true;
+let ll = localStorage.length;
+let totalPrice = 0;
 let counter = 0;
-
+let screenSize =screen.width;
+let arrayrecord = [];
 
 btnMenu.addEventListener('click', (event) => {
 	if (activador) {
@@ -33,33 +37,35 @@ enlaces.forEach((element) => {
 	});
 });
 
-	//Clase para construir los objetos
-	class Producto {
-		constructor(tipo, nombre, precio, iva, descuento, route, description, id) {
-			this.tipo = tipo.toUpperCase();
-			this.nombre = nombre.toUpperCase();
-			this.price = parseFloat(precio);
-			this.precio = parseFloat(precio);
-			this.iva = parseFloat(iva);
-			this.descuento = parseFloat(descuento);
-			this.route = route;
-			this.description = description;
-			this.id = id;
-		}
+//Clase para construir los objetos
+class Producto {
+	constructor(tipo, nombre, precio, iva, descuento, route, description, id) {
+		this.tipo = tipo.toUpperCase();
+		this.nombre = nombre.toUpperCase();
+		this.price = parseFloat(precio);
+		this.precio = parseFloat(precio);
+		this.iva = parseFloat(iva);
+		this.descuento = parseFloat(descuento);
+		this.route = route;
+		this.description = description;
+		this.id = id;
+	}
 
-		//funcion para calcular el precio al aumentar el iva
-		sumaIva() {
-			this.precio = this.precio * (1 + this.iva / 100);
-		}
+	//funcion para calcular el precio al aumentar el iva
+	sumaIva() {
+		this.precio = this.precio * (1 + this.iva / 100);
+	}
 
-		descontar() {
-			this.precio = this.precio * (this.descuento / 100);
-		}
+	descontar() {
+		this.precio = this.precio * (this.descuento / 100);
+	}
 
-		restablecerPrecio() {
-			this.precio = this.price;
-		}
-	};
+	restablecerPrecio() {
+		this.precio = this.price;
+	}
+}
+
+
 
 window.onload = async () => {
 	let array = [];
@@ -82,7 +88,18 @@ window.onload = async () => {
 		}
 	});
 	logica(array);
+	responsive(screenSize)
 };
+
+function responsive(s) {
+	if (s<997){
+		let modales =document.querySelectorAll('[data-class="responsive"]');
+		document.getElementById('menumodal').className = 'modal-body d-flex flex-column justify-content-center align-items-center';
+		modales.forEach((value)=>{
+			value.className = 'modal fade modal-dialog modal-dialog-scrollable';
+		})
+	}
+}
 
 function logica(array) {
 	//Array que contendrá a los productos
@@ -103,7 +120,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento=array.shift();
+	elemento = array.shift();
 	const posillos = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -115,7 +132,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	const gorras = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -127,7 +144,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	//productos de fotografía
 	const fotografiaD = new Producto(
 		elemento.tipo,
@@ -140,7 +157,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	const fotografiaI = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -152,7 +169,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	//productos de video
 	const videoGr = new Producto(
 		elemento.tipo,
@@ -165,7 +182,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	const videoEd = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -177,7 +194,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	const videoGe = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -190,7 +207,7 @@ function logica(array) {
 	);
 
 	//Productos de Publicidad
-	elemento= array.shift();
+	elemento = array.shift();
 	const publicidadB = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -202,7 +219,7 @@ function logica(array) {
 		elemento.id
 	);
 
-	elemento= array.shift();
+	elemento = array.shift();
 	const publicidadSN = new Producto(
 		elemento.tipo,
 		elemento.nombre,
@@ -273,7 +290,8 @@ function logica(array) {
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
 		//Evento onclick que se ejecuta al oprimir el botón presupuestar
-		document.getElementById('est-shirts').onclick = () => {
+		document.getElementById('est-shirts').onclick = (event) => {
+			event.preventDefault();
 			//se borran el input, label y p que se generan al consultar un presupuesto
 			$('.iest').remove();
 			$('.lab').remove();
@@ -298,10 +316,12 @@ function logica(array) {
 			input.placeholder = `Ingresa la cantidad de ${camisetas.nombre} que deseas.`;
 			input.type = 'number';
 			input.name = 'shirtsq';
+			
 
 			//Se agregan al div que contiene la respuesta inputEsta
 			inputEsta.appendChild(label);
 			inputEsta.appendChild(input);
+			input.focus();
 
 			//Evento focusout que genera la respuesta a la consulta de presupuesto y almacena en local storage
 			input.addEventListener('focusout', () => {
@@ -316,7 +336,7 @@ function logica(array) {
 
 				//Se genera respuesta y almacena en el local storage: Cantidad, precio, nombre
 				let valor = printResult(input.value, camisetas.precio, inputEsta);
-				let save = [camisetas.nombre, input.value, valor];
+				let save = [camisetas.nombre, input.value, valor, camisetas.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('shirts', saveString);
 
@@ -325,7 +345,9 @@ function logica(array) {
 			});
 		};
 
-		document.getElementById('est-cup').onclick = () => {
+		document.getElementById('est-cup').onclick = (event) => {
+
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -347,6 +369,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputEsta.appendChild(label);
 			inputEsta.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -355,14 +378,15 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, posillos.precio, inputEsta);
-				let save = [posillos.nombre, input.value, valor];
+				let save = [posillos.nombre, input.value, valor, posillos.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('cups', saveString);
 				posillos.restablecerPrecio();
 			});
 		};
 
-		document.getElementById('est-cap').onclick = () => {
+		document.getElementById('est-cap').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -384,6 +408,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputEsta.appendChild(label);
 			inputEsta.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -392,7 +417,7 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, gorras.precio, inputEsta);
-				let save = [gorras.nombre, input.value, valor];
+				let save = [gorras.nombre, input.value, valor, gorras.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('caps', saveString);
 				gorras.restablecerPrecio();
@@ -433,7 +458,8 @@ function logica(array) {
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
-		document.getElementById('foto-d').onclick = () => {
+		document.getElementById('foto-d').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -455,6 +481,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputFoto.appendChild(label);
 			inputFoto.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -463,14 +490,15 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, fotografiaD.precio, inputFoto);
-				let save = [fotografiaD.nombre, input.value, valor];
+				let save = [fotografiaD.nombre, input.value, valor, fotografiaD.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('fdigital', saveString);
 				fotografiaD.restablecerPrecio();
 			});
 		};
 
-		document.getElementById('foto-i').onclick = () => {
+		document.getElementById('foto-i').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -492,6 +520,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputFoto.appendChild(label);
 			inputFoto.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -500,7 +529,7 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, fotografiaI.precio, inputFoto);
-				let save = [fotografiaI.nombre, input.value, valor];
+				let save = [fotografiaI.nombre, input.value, valor, fotografiaI.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('fimpresa', saveString);
 				fotografiaI.restablecerPrecio();
@@ -543,7 +572,8 @@ function logica(array) {
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
-		document.getElementById('video-gr').onclick = () => {
+		document.getElementById('video-gr').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -565,6 +595,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputVid.appendChild(label);
 			inputVid.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -573,14 +604,15 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, videoGr.precio, inputVid);
-				let save = [videoGr.nombre, input.value, valor];
+				let save = [videoGr.nombre, input.value, valor, videoGr.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('vidgrabacion', saveString);
 				videoGr.restablecerPrecio();
 			});
 		};
 
-		document.getElementById('video-ed').onclick = () => {
+		document.getElementById('video-ed').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -602,6 +634,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputVid.appendChild(label);
 			inputVid.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -610,14 +643,15 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, videoEd.precio, inputVid);
-				let save = [videoEd.nombre, input.value, valor];
+				let save = [videoEd.nombre, input.value, valor, videoEd.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('videdicion', saveString);
 				videoEd.restablecerPrecio();
 			});
 		};
 
-		document.getElementById('video-ge').onclick = () => {
+		document.getElementById('video-ge').onclick = (event) => {
+			event.preventDefault();
 			$('.iest').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -639,6 +673,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputVid.appendChild(label);
 			inputVid.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -647,7 +682,7 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, videoGe.precio, inputVid);
-				let save = [videoGe.nombre, input.value, valor];
+				let save = [videoGe.nombre, input.value, valor, videoGe.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('vigraed', saveString);
 				videoGe.restablecerPrecio();
@@ -689,7 +724,8 @@ function logica(array) {
 		}
 		$('.card').fadeIn(1000).animate({ top: '1rem' }).animate({ top: '0rem' });
 
-		document.getElementById('pub-b').onclick = () => {
+		document.getElementById('pub-b').onclick = (event) => {
+			event.preventDefault();
 			$('.inp').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -711,6 +747,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputAd.appendChild(label);
 			inputAd.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -719,14 +756,15 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, publicidadB.precio, inputAd);
-				let save = [publicidadB.nombre, input.value, valor];
+				let save = [publicidadB.nombre, input.value, valor, publicidadB.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('pubb', saveString);
 				publicidadB.restablecerPrecio();
 			});
 		};
 
-		document.getElementById('pub-sn').onclick = () => {
+		document.getElementById('pub-sn').onclick = (event) => {
+			event.preventDefault();
 			$('.inp').remove();
 			$('.lab').remove();
 			$('.p').remove();
@@ -748,6 +786,7 @@ function logica(array) {
 			input.name = 'shirtsq';
 			inputAd.appendChild(label);
 			inputAd.appendChild(input);
+			input.focus();
 
 			input.addEventListener('focusout', () => {
 				$('.p').remove();
@@ -756,7 +795,7 @@ function logica(array) {
 					input.value = 0;
 				}
 				let valor = printResult(input.value, publicidadSN.precio, inputAd);
-				let save = [publicidadSN.nombre, input.value, valor];
+				let save = [publicidadSN.nombre, input.value, valor, publicidadSN.route];
 				const saveString = JSON.stringify(save);
 				localStorage.setItem('pubsn', saveString);
 				publicidadSN.restablecerPrecio();
@@ -776,7 +815,72 @@ function logica(array) {
 			$('.inp').remove();
 			$('.lab').remove();
 			$('.p').remove();
-			console.log('si funciona');
 		});
 	};
+
+	recBtn.addEventListener('click', (event) => {
+		totalPrice = 0;
+		updatell();
+		clearLS();
+
+
+		if (ll == 0) {
+			$('.total').append(`
+	
+			<p class="total_price">HISTORIAL VACÍO</p>
+	
+			`);
+
+			return;
+		}
+		for (let i = 0; i < ll; i += 1) {
+			arrayrecord[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+		}
+		updateRecord(arrayrecord);		
+		
+		
+	});
+	var myModalEl = document.getElementById('recordModal');
+		myModalEl.addEventListener('hidden.bs.modal', function (event) {
+			$('.cardsR').remove();
+			$('.total_price').remove();
+		});
+	document.getElementById('clearRecord').onclick = () => {
+		$('.cardsR').remove();
+		$('.total_price').remove();
+	};
+
+	function updateRecord(arr) {
+		for (let i = 0; i < arr.length; i += 1) {
+			$('.cards-record').append(`
+			<div class="card cardsR">
+			<img src="${arr[i][3]}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">${arr[i][0]}</h5>
+				<p class="card-quantity"> CANTIDAD : ${arr[i][1]}</p>
+				<p class="card-price">PRECIO: $ ${arr[i][2]}</p>
+			</div>
+			</div> `);
+
+			totalPrice += arr[i][2];
+		}
+
+		$('.total').append(`
+	
+		<p class="total_price">TOTAL: $ ${totalPrice}</p>
+	
+		`);
+	}
+	function updatell() {
+		ll = localStorage.length;
+	}
+
+	function clearLS() {
+		if (ll > 4) {
+			localStorage.clear();
+			ll=0;
+		}
+	}
+
+	
 }
